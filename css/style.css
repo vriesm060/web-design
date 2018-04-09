@@ -1,0 +1,42 @@
+:root  {
+  /* Colors */
+  --color-primary: ;
+  --color-black: #1C1C1C;
+
+  /* Fonts */
+  --font-family: 'montserrat', arial, helvetica, sans-serif;
+  --font-size: 1em;
+
+    /* Base fonts */
+    --base-font-size: var(--font-size);
+    --base-font-weight: 300;
+    --base-line-height: 1.4;
+
+    /* Other... */
+
+  /* Spacing */
+  --spacing-unit: 1.5rem;
+}
+
+/*
+====================
+    General
+====================
+*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+body {
+  color: var(--color-black);
+  font-family: var(--font-family);
+  font-size: var(--base-font-size);
+  font-weight: var(--base-font-weight);
+  line-height: var(--base-line-height);
+}
