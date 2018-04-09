@@ -40,3 +40,54 @@ body {
   font-weight: var(--base-font-weight);
   line-height: var(--base-line-height);
 }
+
+/*
+====================
+    Page title
+====================
+*/
+
+.page-title {
+
+}
+
+/*
+====================
+    Main
+====================
+*/
+
+main {
+  display: block;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: var(--spacing-unit);
+}
+
+/*
+====================
+    Portfolio items
+====================
+*/
+
+.portfolio-item--container {
+  display: grid;
+  grid-gap: var(--spacing-unit);
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-rows: repeat(auto, minmax(15rem, 1fr));
+  margin: var(--spacing-unit) auto;
+  /* background: green; */
+}
+
+.portfolio-item {
+  display: block;
+  min-height: 14rem;
+  background: yellow;
+}
+@media all and (min-width: 54rem) {
+  .portfolio-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
