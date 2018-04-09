@@ -80,7 +80,9 @@ main {
 }
 
 .portfolio-item {
+  position: relative;
   display: block;
+  max-width: 32rem;
   min-height: 14rem;
   background: yellow;
 }
@@ -88,5 +90,45 @@ main {
   .portfolio-item:first-child {
     grid-column: span 2;
     grid-row: span 2;
+    max-width: 48rem;
   }
+}
+
+.portfolio-item > a {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  display: block;
+}
+
+.portfolio-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.portfolio-item--content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-unit);
+  color: #FFF;
+  background-color: rgba(28, 28, 28, .8);
+  text-decoration: none;
+  pointer-events: none;
+  transition: all .3s ease-in-out;
+}
+.portfolio-item > a:focus .portfolio-item--content,
+.portfolio-item > a:hover .portfolio-item--content,
+.portfolio-item > a:active .portfolio-item--content {
+  opacity: 1;
+  pointer-events: auto;
 }
