@@ -77,7 +77,6 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   grid-template-rows: repeat(auto, minmax(15rem, 1fr));
   margin: var(--spacing-unit) auto;
-  /* background: green; */
 }
 
 .portfolio-item {
