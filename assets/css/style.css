@@ -87,9 +87,11 @@ main {
   border: 0;
   /* outline: 0; */
   margin: auto var(--spacing-unit);
+  background: none;
   font-size: var(--base-font-size);
   font-weight: 500;
   line-height: 1;
+  cursor: pointer;
 }
 .extras > button > svg {
   flex: 0 0 auto;
@@ -107,9 +109,11 @@ main {
 */
 
 .options {
-  /* background-color: red; */
-  display: block;
+  display: none;
   width: 100%;
+}
+.options.open {
+  display: block;
 }
 
 .options ul {
