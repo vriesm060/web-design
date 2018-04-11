@@ -2,10 +2,12 @@
 (function () {
 
   var extras = {
+    extras: document.querySelector('.extras'),
     filter: document.querySelector('.filter'),
     filterBtn: document.querySelector('.btn-filter'),
     sort: document.querySelector('.sort'),
     sortBtn: document.querySelector('.btn-sort'),
+    options: document.querySelectorAll('.options'),
     init: function () {
       var self = this;
 
@@ -18,13 +20,25 @@
       }, false);
     },
     openOptions: function (option) {
-      option.parentNode.parentNode.classList.toggle('open');
-      option.children[0].children[0].children[0].focus();
-      if (option.classList.contains('open')) {
+
+      this.options.forEach(function (item) {
+        if (item !== option) {
+          item.classList.remove('open');
+        }
+      });
+
+      if (option.classList.contains('open') && this.extras.classList.contains('open')) {
         option.classList.remove('open');
+        this.extras.classList.remove('open');
+      } else if (this.extras.classList.contains('open')) {
+        option.classList.add('open');
+        option.children[0].children[0].children[0].focus();
       } else {
         option.classList.add('open');
+        this.extras.classList.add('open');
+        option.children[0].children[0].children[0].focus();
       }
+
     }
   };
 
