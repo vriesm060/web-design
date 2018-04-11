@@ -18,6 +18,8 @@
       }, false);
     },
     openOptions: function (option) {
+      option.parentNode.parentNode.classList.toggle('open');
+      option.children[0].children[0].children[0].focus();
       if (option.classList.contains('open')) {
         option.classList.remove('open');
       } else {
