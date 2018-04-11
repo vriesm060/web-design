@@ -13,8 +13,67 @@
       <!-- Title -->
       <h2 class="page-title">Portfolio</h2>
 
+      <header class="extras">
+        <button class="btn-filter" type="button">
+          <svg viewBox="0 0 16 16">
+	          <path d="M10,13H6v-2h4V13z M12,9H4V7h8V9z M14,5H2V3h12V5z"/>
+          </svg>
+          <span>Filteren</span>
+        </button>
+
+        <button class="btn-sort" type="button">
+          <svg viewBox="0 0 459 459">
+		        <path d="M0,382.5h153v-51H0V382.5z M0,76.5v51h459v-51H0z M0,255h306v-51H0V255z"/>
+          </svg>
+          <span>Sorteren</span>
+        </button>
+
+        <!-- Filter option -->
+        <form class="options filter">
+          <ul>
+            <li>
+              <input id="frontend" type="radio" name="item-type" value="frontend">
+              <label for="frontend">Frontend</label>
+            </li>
+            <li>
+              <input id="visual-design" type="radio" name="item-type" value="visual-design">
+              <label for="visual-design">Visual Design</label>
+            </li>
+            <li>
+              <input id="interaction" type="radio" name="item-type" value="interaction">
+              <label for="interaction">Interaction</label>
+            </li>
+          </ul>
+        </form>
+
+        <!-- Sorting option -->
+        <form class="options sort">
+          <ul>
+            <li>
+              <input id="recent" type="radio" name="order" value="recent">
+              <label for="recent">Meest recent</label>
+            </li>
+            <li>
+              <input id="oldest" type="radio" name="order" value="oldest">
+              <label for="oldest">Oudste</label>
+            </li>
+          </ul>
+        </form>
+      </header>
+
       <!-- Portfolio items -->
       <ol class="portfolio-item--container">
+        <li class="portfolio-item">
+          <a href="">
+            <img src="assets/images/portfolio-items/woningmarkt-amsterdam.png" alt="Woningmarkt Amsterdam preview">
+            <section class="portfolio-item--content">
+              <h1>Woningmarkt Amsterdam</h1>
+              <span>
+                <!-- SVG here -->
+              </span>
+            </section>
+          </a>
+        </li>
         <li class="portfolio-item">
           <a href="">
             <img src="assets/images/portfolio-items/borges.png" alt="Borges preview">
@@ -60,18 +119,6 @@
           </a>
         </li>
       </ol>
-
-      <!-- <footer>
-        Filter option
-        <form>
-
-        </form>
-
-        Sorting option
-        <form>
-
-        </form>
-      </footer> -->
 
     </main>
 
