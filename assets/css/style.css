@@ -2,6 +2,7 @@
   /* Colors */
   --color-primary: #FF004C;
   --color-black: #1C1C1C;
+  --color-darkgrey: #4C4B45;
 
   /* Fonts */
   --font-family: 'montserrat', arial, helvetica, sans-serif;
@@ -277,4 +278,113 @@ main {
   .portfolio-item:first-child h1 {
     font-size: 3em;
   }
+}
+
+/*
+====================
+    Portfolio details
+====================
+*/
+
+.cover-image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  min-height: calc(100vh - (2 * var(--spacing-unit)));
+  background: url(../images/portfolio-items/woningmarkt-amsterdam.png) no-repeat bottom left;
+  background-size: auto 100%;
+}
+@media all and (orientation: landscape) {
+  .cover-image {
+    background-size: 100% auto;
+  }
+}
+
+button.back {
+  position: absolute;
+  left: 0;
+  align-self: center;
+  display: block;
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 1.0625rem;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  background-color: #FFF;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+button.back:focus,
+button.back:hover,
+button.back:active {
+  background-color: var(--color-primary);
+}
+
+button.back > svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--color-black);
+}
+
+.portfolio-item-detail {
+  display: block;
+  width: 100%;
+  max-width: calc(30rem + (4 * var(--spacing-unit)));
+  height: auto;
+  background-color: var(--color-darkgrey);
+}
+@media all and (min-width: 36rem) {
+  .portfolio-item-detail {
+    padding: var(--spacing-unit);
+    margin-right: calc(2 * var(--spacing-unit));
+    margin-bottom: calc(2 * var(--spacing-unit));
+  }
+}
+
+.portfolio-item-detail h1 {
+  display: block;
+  margin: var(--spacing-unit);
+  color: #FFF;
+  font-size: 4em;
+  font-weight: 500;
+  line-height: var(--base-line-height);
+}
+
+.metadata ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--spacing-unit) / 2);
+}
+
+.metadata li {
+  display: flex;
+  margin: calc(var(--spacing-unit) / 2);
+}
+
+.metadata li > svg {
+  display: block;
+  width: var(--base-font-size);
+  height: var(--base-font-size);
+  fill: var(--color-primary);
+}
+
+.metadata li > span {
+  display: block;
+  height: 100%;
+  margin-left: calc(var(--spacing-unit) / 2);
+  color: #FFF;
+  font-size: var(--base-font-size);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.portfolio-item-detail p {
+  display: block;
+  margin: var(--spacing-unit);
+  color: #FFF;
+  font-size: var(--base-font-size);
+  font-weight: var(--base-font-weight);
+  line-height: 1.7;
 }
