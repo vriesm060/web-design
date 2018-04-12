@@ -301,10 +301,10 @@ main {
   }
 }
 
-button.back {
+a.back {
   position: absolute;
   left: 0;
-  align-self: center;
+  top: 0;
   display: block;
   width: 3.125rem;
   height: 3.125rem;
@@ -316,13 +316,18 @@ button.back {
   cursor: pointer;
   transition: all .3s ease-in-out;
 }
-button.back:focus,
-button.back:hover,
-button.back:active {
+@media all and (min-width: 36rem) {
+  a.back {
+    top: calc((100vh - 3.125rem) / 2);
+  }
+}
+a.back:focus,
+a.back:hover,
+a.back:active {
   background-color: var(--color-primary);
 }
 
-button.back > svg {
+a.back > svg {
   width: 100%;
   height: 100%;
   fill: var(--color-black);
@@ -346,10 +351,17 @@ button.back > svg {
 .portfolio-item-detail h1 {
   display: block;
   margin: var(--spacing-unit);
+  margin-top: 3.125rem;
   color: #FFF;
-  font-size: 4em;
+  font-size: 2.5em;
   font-weight: 500;
   line-height: var(--base-line-height);
+}
+@media all and (min-width: 36rem) {
+  .portfolio-item-detail h1 {
+    margin-top: 0;
+    font-size: 4em;
+  }
 }
 
 .metadata ul {
