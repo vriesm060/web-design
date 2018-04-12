@@ -1,6 +1,6 @@
 :root  {
   /* Colors */
-  --color-primary: ;
+  --color-primary: #FF004C;
   --color-black: #1C1C1C;
 
   /* Fonts */
@@ -182,15 +182,16 @@ main {
   transition: all .3s ease-in-out;
 }
 .options li > input:focus + label,
-.options li > input:checked + label,
 .options li > input + label:hover,
-.options li > input + label:active {
+.options li > input + label:active,
+.options li > input:checked + label {
   color: var(--color-black);
 }
+
 .options li > input:focus + label::after,
-.options li > input:checked + label::after,
 .options li > input + label:hover::after,
-.options li > input + label:active::after {
+.options li > input + label:active::after,
+.options li > input:checked + label::after {
   width: 2.5rem;
 }
 

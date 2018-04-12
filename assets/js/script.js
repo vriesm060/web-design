@@ -32,11 +32,9 @@
         this.extras.classList.remove('open');
       } else if (this.extras.classList.contains('open')) {
         option.classList.add('open');
-        option.children[0].children[0].children[0].focus();
       } else {
         option.classList.add('open');
         this.extras.classList.add('open');
-        option.children[0].children[0].children[0].focus();
       }
 
     }
