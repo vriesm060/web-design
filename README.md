@@ -20,12 +20,9 @@ This portfolio page features projects I worked on.
 #### Design principles included
 ---
 
-* [ ] **#03:** Conserve attention at all costs
-* [ ] **#06:** One primary action per screen
-* [ ] **#07:** Keep secondary actions secondary
-* [ ] **#10:** Consistency matters
-* [ ] **#11:** Strong visual hierarchies work best
-* [ ] **#14:** Progressive disclosure
+* [x] **#06:** One primary action per screen
+* [x] **#11:** Strong visual hierarchies work best
+* [x] **#14:** Progressive disclosure
 
 <!-- What makes your project stand out? -->
 
