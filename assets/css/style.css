@@ -1,0 +1,402 @@
+:root  {
+  /* Colors */
+  --color-primary: #FF004C;
+  --color-black: #1C1C1C;
+  --color-darkgrey: #4C4B45;
+
+  /* Fonts */
+  --font-family: 'montserrat', arial, helvetica, sans-serif;
+  --font-size: 1em;
+
+    /* Base fonts */
+    --base-font-size: var(--font-size);
+    --base-font-weight: 300;
+    --base-line-height: 1.4;
+
+    /* Heading fonts */
+    --heading-font-size: calc(2.5 * var(--font-size));
+    --heading-font-weight: 400;
+
+    /* Other... */
+
+  /* Spacing */
+  --spacing-unit: 1.5rem;
+}
+
+/*
+====================
+    General
+====================
+*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+body {
+  color: var(--color-black);
+  font-family: var(--font-family);
+  font-size: var(--base-font-size);
+  font-weight: var(--base-font-weight);
+  line-height: var(--base-line-height);
+}
+
+/*
+====================
+    Page title
+====================
+*/
+
+.page-title {
+  margin: var(--spacing-unit);
+  font-size: 2.5em;
+}
+
+/*
+====================
+    Main
+====================
+*/
+
+main {
+  display: block;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/*
+====================
+    Extras
+====================
+*/
+
+.extras {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: var(--base-font-size);
+  transition: all .3s ease-in-out;
+}
+.extras.open {
+  height: calc(var(--base-font-size) + (4.5 * var(--spacing-unit)));
+}
+
+.btn--container {
+  display: flex;
+  flex-wrap: wrap;
+  height: var(--base-font-size);
+}
+
+.extras button {
+  display: flex;
+  padding: 0;
+  border: 0;
+  /* outline: 0; */
+  margin: auto var(--spacing-unit);
+  background: none;
+  font-size: var(--base-font-size);
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+}
+.extras button > svg {
+  flex: 0 0 auto;
+  display: block;
+  width: var(--base-font-size);
+  height: var(--base-font-size);
+  margin-right: calc(var(--spacing-unit) / 2);
+  fill: var(--color-black);
+}
+
+/*
+====================
+    Options
+====================
+*/
+
+.options--container {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.options {
+  position: absolute;
+  top: 0;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  pointer-events: none;
+  transform: translateX(0);
+  transition: all .3s ease-in-out;
+}
+.options.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(var(--spacing-unit));
+}
+
+.options ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.options li {
+  display: block;
+  margin: calc(2 * var(--spacing-unit));
+  margin-bottom: 0;
+}
+
+.options li > input {
+  position: absolute;
+  left: -200%;
+  opacity: 0;
+}
+
+.options li > input + label {
+  position: relative;
+  display: block;
+  padding-bottom: calc(var(--spacing-unit) / 2);
+  color: rgba(28, 28, 28, .5);
+  font-size: var(--base-font-size);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+.options.open li > input + label {
+  font-size: calc(1.5 * var(--base-font-size));
+}
+.options li > input + label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-black);
+  transition: all .3s ease-in-out;
+}
+.options li > input:focus + label,
+.options li > input + label:hover,
+.options li > input + label:active,
+.options li > input:checked + label {
+  color: var(--color-black);
+}
+
+.options li > input:focus + label::after,
+.options li > input + label:hover::after,
+.options li > input + label:active::after,
+.options li > input:checked + label::after {
+  width: 2.5rem;
+}
+
+/*
+====================
+    Portfolio items
+====================
+*/
+
+.portfolio-item--container {
+  display: grid;
+  grid-gap: var(--spacing-unit);
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-rows: repeat(auto, minmax(15rem, 1fr));
+  margin: var(--spacing-unit);
+}
+
+.portfolio-item {
+  position: relative;
+  display: block;
+  max-width: 32rem;
+  min-height: 14rem;
+  background: yellow;
+}
+@media all and (min-width: 54rem) {
+  .portfolio-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+    max-width: 48rem;
+  }
+}
+
+.portfolio-item > a {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  display: block;
+}
+
+.portfolio-item img {
+  display: block;
+  width: auto;
+  height: 125%;
+}
+
+.portfolio-item--content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-unit);
+  /* padding: calc(2 * var(--spacing-unit)); */
+  color: #FFF;
+  background-color: rgba(28, 28, 28, .8);
+  text-decoration: none;
+  pointer-events: none;
+  transition: all .3s ease-in-out;
+}
+.portfolio-item > a:focus .portfolio-item--content,
+.portfolio-item > a:hover .portfolio-item--content,
+.portfolio-item > a:active .portfolio-item--content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.portfolio-item h1 {
+  width: 100%;
+  font-size: 2em;
+  font-weight: var(--heading-font-weight);
+  line-height: var(--base-line-height);
+  text-align: center;
+}
+@media all and (min-width: 54rem) {
+  .portfolio-item:first-child h1 {
+    font-size: 3em;
+  }
+}
+
+/*
+====================
+    Portfolio details
+====================
+*/
+
+.cover-image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  min-height: calc(100vh - (2 * var(--spacing-unit)));
+  background: url(../images/portfolio-items/woningmarkt-amsterdam.png) no-repeat bottom left;
+  background-size: auto 100%;
+}
+@media all and (orientation: landscape) {
+  .cover-image {
+    background-size: 100% auto;
+  }
+}
+
+a.back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 1.0625rem;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  background-color: #FFF;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+@media all and (min-width: 36rem) {
+  a.back {
+    top: calc((100vh - 3.125rem) / 2);
+  }
+}
+a.back:focus,
+a.back:hover,
+a.back:active {
+  background-color: var(--color-primary);
+}
+
+a.back > svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--color-black);
+}
+
+.portfolio-item-detail {
+  display: block;
+  width: 100%;
+  max-width: calc(30rem + (4 * var(--spacing-unit)));
+  height: auto;
+  background-color: var(--color-darkgrey);
+}
+@media all and (min-width: 36rem) {
+  .portfolio-item-detail {
+    padding: var(--spacing-unit);
+    margin-right: calc(2 * var(--spacing-unit));
+    margin-bottom: calc(2 * var(--spacing-unit));
+  }
+}
+
+.portfolio-item-detail h1 {
+  display: block;
+  margin: var(--spacing-unit);
+  margin-top: 3.125rem;
+  color: #FFF;
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: var(--base-line-height);
+}
+@media all and (min-width: 36rem) {
+  .portfolio-item-detail h1 {
+    margin-top: 0;
+    font-size: 4em;
+  }
+}
+
+.metadata ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--spacing-unit) / 2);
+}
+
+.metadata li {
+  display: flex;
+  margin: calc(var(--spacing-unit) / 2);
+}
+
+.metadata li > svg {
+  display: block;
+  width: var(--base-font-size);
+  height: var(--base-font-size);
+  fill: var(--color-primary);
+}
+
+.metadata li > span {
+  display: block;
+  height: 100%;
+  margin-left: calc(var(--spacing-unit) / 2);
+  color: #FFF;
+  font-size: var(--base-font-size);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.portfolio-item-detail p {
+  display: block;
+  margin: var(--spacing-unit);
+  color: #FFF;
+  font-size: var(--base-font-size);
+  font-weight: var(--base-font-weight);
+  line-height: 1.7;
+}
