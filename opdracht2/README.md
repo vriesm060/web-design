@@ -22,7 +22,7 @@ Wanneer hij/zij het gevoel heeft dat deze minor perfect is om te volgen, moet hi
 #### Mobiel
 ---
 
-<img src="screenshots/preview-mobile.png" style="width: 50%;">
+<img src="screenshots/preview-mobile.png" width="50%">
 
 #### Desktop
 ---
