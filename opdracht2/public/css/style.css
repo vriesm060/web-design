@@ -1,0 +1,49 @@
+:root {
+  /* Colors */
+  --color-primary: #FFCC00;
+  --color-secondary: #A6D5C2;
+  --color-grey: #F2F2F2;
+
+  /* Fonts */
+  --font-family: 'Open Sans', sans-serif;
+
+    /* Base fonts */
+    --base-font-size: 1.25em;
+    --base-font-weight: 400;
+    --base-line-height: 1.7;
+
+    /* Title fonts */
+    --title-font-size: 4.5em;
+    --title-font-weight: 300;
+    --title-line-height: 1.4;
+
+    /* Heading fonts */
+    --heading-font-size: 3em;
+    --heading-font-weight: 300;
+    --heading-line-height: 1.4;
+
+    /* Button fonts */
+    --button-font-size: 1.5em;
+    --button-font-weight: 700;
+    --button-line-height: 1;
+}
+
+/*
+====================
+  General
+====================
+*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+body {
+
+}
