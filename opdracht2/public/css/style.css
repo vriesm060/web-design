@@ -10,27 +10,42 @@
   --font-family: 'Open Sans', sans-serif;
 
     /* Base fonts */
-    --base-font-size: 1.25em;
+    --base-font-size: 1em;
     --base-font-weight: 400;
     --base-line-height: 1.7;
 
     /* Title fonts */
-    --title-font-size: 4.5em;
+    --title-font-size: 2.75em;
     --title-font-weight: 300;
     --title-line-height: 1.4;
 
     /* Heading fonts */
-    --heading-font-size: 3em;
+    --heading-font-size: 1.75em;
     --heading-font-weight: 300;
     --heading-line-height: 1.4;
 
     /* Button fonts */
-    --button-font-size: 1.5em;
+    --button-font-size: 1.25em;
     --button-font-weight: 700;
     --button-line-height: 1;
 
   /* Spacing */
   --spacing-unit: 1.5rem;
+}
+@media all and (min-width: 48rem) {
+  :root {
+    /* Base fonts */
+    --base-font-size: 1.25em;
+
+    /* Title fonts */
+    --title-font-size: 4.5em;
+
+    /* Heading fonts */
+    --heading-font-size: 3em;
+
+    /* Button fonts */
+    --button-font-size: 1.5em;
+  }
 }
 
 /*
@@ -81,24 +96,30 @@ a {
   text-decoration: none;
   transition: all .3s ease-in-out;
 }
-a.active,
 a:focus,
 a:hover,
 a:active {
   border-bottom-color: transparent;
 }
 
+/*
+====================
+  Action Button
+====================
+*/
+
 .action-button {
   position: relative;
+  top: 0;
   z-index: 2;
-  display: block;
+  display: inline-block;
   min-width: 12.5rem;
-  height: 4.6875rem;
-  padding: calc((4.6875rem - var(--button-font-size)) / 2);
+  height: 3.125rem;
+  padding: calc((3.125rem - var(--button-font-size)) / 2);
   border: 0;
   border-radius: .3125rem;
   outline: 0;
-  margin: 0;
+  margin: var(--spacing-unit) 0;
   color: #FFF;
   background-color: var(--color-black);
   font-size: var(--button-font-size);
@@ -106,14 +127,19 @@ a:active {
   text-align: center;
   line-height: 1.4;
   cursor: pointer;
-  transform: translateY(0);
   transition: all .3s ease-in-out;
+}
+@media all and (min-width: 48rem) {
+  .action-button {
+    height: 4.0625rem;
+    padding: calc((4.0625rem - var(--button-font-size)) / 2);
+  }
 }
 .action-button::after {
   position: absolute;
-  z-index: -1;
   left: 0;
   top: .3125rem;
+  z-index: -1;
   display: block;
   width: 100%;
   height: 100%;
@@ -124,7 +150,7 @@ a:active {
 }
 .action-button:focus,
 .action-button:hover {
-  transform: translateY(.3125rem);
+  top: .3125rem;
 }
 .action-button:focus::after,
 .action-button:hover::after {
@@ -138,11 +164,30 @@ a:active {
 */
 
 .cmd-icon {
-  flex: 0 0 auto;
-  align-self: flex-start;
+  position: relative;
+  float: left;
+  width: 6.25rem;
+  height: 6.25rem;
+  margin: 0 var(--spacing-unit);
+  /* background-color: red; */
+}
+@media all and (min-width: 48rem) {
+  .cmd-icon {
+    width: 12.5rem;
+    height: 12.5rem;
+  }
+}
+.cmd-icon::before {
+  position: absolute;
+  left: 12.5%;
+  top: 12.5%;
+  z-index: -1;
   display: block;
-  width: 12.5rem;
-  height: auto;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  background-color: rgba(255, 204, 0, .75);
+  content: '';
 }
 
 .cmd-icon > svg {
@@ -152,18 +197,46 @@ a:active {
 
 /*
 ====================
-  Action
+  Site Header
 ====================
 */
 
-.action {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.site-header-wrapper {
+  display: block;
+  width: 100%;
+  min-height: 85vh;
+  background-color: var(--color-primary);
 }
 
-.action .action-button {
-  margin-top: var(--spacing-unit);
+.site-header {
+  display: block;
+  width: 100%;
+  max-width: calc(75rem + (2 * var(--spacing-unit)));
+  padding: var(--spacing-unit);
+  margin: 0 auto;
+  /* background-color: green; */
+}
+
+.site-header .cmd-icon {
+  width: 6.25rem;
+  height: 6.25rem;
+  margin: 0;
+  margin-bottom: var(--spacing-unit);
+}
+@media all and (min-width: 48rem) {
+  .site-header .cmd-icon {
+    margin-bottom: calc(2 * var(--spacing-unit));
+  }
+}
+
+.site-header h1 {
+  clear: both;
+  margin-bottom: calc(1.5 * var(--spacing-unit));
+}
+@media all and (min-width: 48rem) {
+  .site-header h1 {
+    margin-bottom: calc(3 * var(--spacing-unit));
+  }
 }
 
 /*
@@ -176,35 +249,33 @@ a:active {
   display: block;
   width: 100%;
   max-width: calc(75rem + (3 * var(--spacing-unit)));
-  height: auto;
   margin: 0 auto;
 }
 
 .site-nav > ul {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  height: 100%;
 }
 
 .site-nav li {
   display: block;
-  width: auto;
-  height: auto;
-  margin: calc(1.5 * var(--spacing-unit));
+  margin: var(--spacing-unit);
+}
+@media all and (min-width: 48rem) {
+  .site-nav li {
+    margin: calc(1.5 * var(--spacing-unit));
+  }
 }
 
 .site-nav a {
   display: block;
-  width: 100%;
-  height: 100%;
   padding-bottom: .625rem;
   border-bottom: .125rem solid transparent;
   color: var(--color-black);
   font-size: var(--base-font-size);
   font-weight: 300;
   line-height: 1;
-  text-decoration: none;
-  transition: all .3s ease-in-out;
 }
 .site-nav a.active,
 .site-nav a:focus,
@@ -212,38 +283,8 @@ a:active {
 .site-nav a:active {
   border-bottom-color: var(--color-black);
 }
-
 .site-nav a.active {
   font-weight: 700;
-}
-
-/*
-====================
-  Site Header
-====================
-*/
-
-.site-header {
-  display: block;
-  width: 100%;
-  min-height: 85vh;
-  background-color: var(--color-primary);
-}
-
-.site-header-wrapper {
-  display: block;
-  width: 100%;
-  max-width: 75rem;
-  margin: 0 auto;
-}
-
-.site-header-wrapper .cmd-icon {
-  width: 6.25rem;
-}
-
-.site-header-wrapper h1 {
-  margin-top: calc(2 * var(--spacing-unit));
-  margin-bottom: calc(3 * var(--spacing-unit));
 }
 
 /*
@@ -255,32 +296,40 @@ a:active {
 main {
   display: block;
   width: 100%;
-  max-width: 75rem;
-  height: auto;
+  max-width: calc(75rem + (2 * var(--spacing-unit)));
   margin: 0 auto;
 }
 
 /*
 ====================
-  Site Section
+  Page Section
 ====================
 */
 
-.site-section {
-  display: flex;
+.page-section {
+  display: block;
   width: 100%;
-  margin: calc(5 * var(--spacing-unit)) 0;
+  padding: calc(2.5 * var(--spacing-unit)) 0;
+}
+@media all and (min-width: 48rem) {
+  .page-section {
+    padding: calc(5 * var(--spacing-unit)) 0;
+  }
 }
 
-.site-section > article {
-  margin-left: calc(3 * var(--spacing-unit));
+.page-section > article {
+  display: block;
+  width: 100%;
+  max-width: calc(37.5rem + (2 * var(--spacing-unit)));
+  padding: 0 var(--spacing-unit);
+  margin: 0 auto;
 }
 
-.site-section h2 {
+.page-section > article h2 {
   margin-bottom: calc(2 * var(--spacing-unit));
 }
 
-.site-section p {
+.page-section > article p {
   margin: var(--spacing-unit) 0;
 }
 
