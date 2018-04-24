@@ -165,11 +165,11 @@ a:active {
 
 .cmd-icon {
   position: relative;
+  z-index: 2;
   float: left;
   width: 6.25rem;
   height: 6.25rem;
   margin: 0 var(--spacing-unit);
-  /* background-color: red; */
 }
 @media all and (min-width: 48rem) {
   .cmd-icon {
@@ -179,12 +179,12 @@ a:active {
 }
 .cmd-icon::before {
   position: absolute;
-  left: 12.5%;
-  top: 12.5%;
+  left: 7.5%;
+  top: 7.5%;
   z-index: -1;
   display: block;
-  width: 75%;
-  height: 75%;
+  width: 85%;
+  height: 85%;
   border-radius: 50%;
   background-color: rgba(255, 204, 0, .75);
   content: '';
@@ -204,7 +204,7 @@ a:active {
 .site-header-wrapper {
   display: block;
   width: 100%;
-  min-height: 85vh;
+  min-height: 90vh;
   background-color: var(--color-primary);
 }
 
@@ -309,11 +309,14 @@ main {
 .page-section {
   display: block;
   width: 100%;
-  padding: calc(2.5 * var(--spacing-unit)) 0;
+  padding: calc(1.5 * var(--spacing-unit)) 0;
+}
+.page-section.special {
+  padding: 0;
 }
 @media all and (min-width: 48rem) {
   .page-section {
-    padding: calc(5 * var(--spacing-unit)) 0;
+    padding: calc(3 * var(--spacing-unit)) 0;
   }
 }
 
@@ -335,28 +338,74 @@ main {
 
 /*
 ====================
+  Testimonials
+====================
+*/
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  justify-items: start;
+  align-items: start;
+  padding: var(--spacing-unit) 0;
+}
+
+.testimonials blockquote {
+  position: relative;
+  display: block;
+  width: calc(100% - (2 * var(--spacing-unit)));
+  padding: calc(3 * var(--spacing-unit)) var(--spacing-unit);
+  border-radius: .3125rem;
+  margin: var(--spacing-unit) auto;
+  background-color: var(--color-primary);
+  font-style: italic;
+  line-height: var(--base-line-height);
+}
+@media all and (min-width: 48rem) {
+  .testimonials blockquote {
+    margin: calc(2 * var(--spacing-unit)) auto;
+  }
+}
+.testimonials blockquote::before {
+  position: absolute;
+  left: -1.5625rem;
+  top: -1.5625rem;
+  float: left;
+  width: 4.6875rem;
+  height: 4.6875rem;
+  background: url(../images/icons/man-icon.svg) no-repeat center;
+  content: '';
+}
+.testimonials blockquote:nth-child(even) {
+  background-color: var(--color-grey);
+}
+.testimonials blockquote:nth-child(even)::before {
+  background: url(../images/icons/woman-icon.svg) no-repeat center;
+}
+
+/*
+====================
   Site Footer
 ====================
 */
 
-.site-footer {
-  display: block;
-  width: 100%;
-  height: auto;
-  background-color: var(--color-grey);
-}
-
 .site-footer-wrapper {
   display: block;
   width: 100%;
-  max-width: 75rem;
-  height: auto;
+  background-color: var(--color-grey);
+}
+
+.site-footer {
+  display: block;
+  width: 100%;
+  max-width: calc(75rem + (2 * var(--spacing-unit)));
   margin: 0 auto;
 }
 
-.site-footer .site-section {
-  min-height: 0;
-  margin: 0;
-  padding-top: calc(5 * var(--spacing-unit));
-  padding-bottom: calc(5 * var(--spacing-unit));
+.site-footer .cmd-icon::before {
+  display: none;
+}
+
+.site-footer .page-section > article h2 {
+  margin-bottom: var(--spacing-unit);
 }
