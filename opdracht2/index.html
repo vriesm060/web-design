@@ -9,33 +9,37 @@
   </head>
   <body>
 
+    <a href="#content" class="screenreader">meteen naar de inhoud</a>
+
     <div class="site-header-wrapper">
-      <nav class="site-nav">
+      <nav class="site-nav" role="menu">
         <ul>
-          <li><a class="active" href="">Home</a></li>
-          <li><a href="">Lesprogramma</a></li>
-          <li><a href="">Werkwijze</a></li>
+          <li><a href="#de-minor">De Minor</a></li>
+          <li><a href="#geschikt-voor-mij"><span class="screenreader">is deze minor</span>Geschikt voor mij?</a></li>
+          <li><a href="#testimonials">Feedback studenten</a></li>
+          <li><a href="#toelatingseisen">Toelatingseisen</a></li>
+          <li><a href="#lesprogramma">Lesprogramma</a></li>
         </ul>
       </nav>
 
-      <header class="site-header">
+      <header class="site-header" role="banner">
         <div class="cmd-icon">
           <img src="public/images/icons/h1.svg" alt="">
         </div>
-        <h1>Minor Web Development</h1>
-        <h2>Iets voor mij?</h2>
-        <a class="action-button" href="sec1">Ontdek het!</a>
+        <h1 id="content">Minor Web Development</h1>
+        <h2><span class="screenreader">is deze minor</span>Iets voor mij?</h2>
+        <a class="action-button" href="#sec1" role="button">Ontdek<span class="screenreader">deze minor</span>!</a>
       </header>
     </div>
 
     <main>
-      <section id="sec1" class="page-section">
+      <section class="page-section">
         <div class="cmd-icon">
           <img src="public/images/icons/enter-key.svg" alt="">
         </div>
 
-        <article>
-          <h2>De minor</h2>
+        <article id="de-minor">
+          <h2>Over de Minor</h2>
           <p>
             Deze minor leert je interactieve toepassingen maken met de webtechnologieën: HTML, CSS en JavaScript.
             In verschillende vakken en projecten leer je over browsers, het ‘real time web’, internet of things, performance, rapid prototyping, usability, documenteren, versiebeheer, debuggen, testen, responsive, reactive, micro interacties, API’s en &hellip; en &hellip;
@@ -53,8 +57,8 @@
           <img src="public/images/icons/rock.svg" alt="">
         </div>
 
-        <article>
-          <h2>Geschikt voor mij?</h2>
+        <article id="geschikt-voor-mij">
+          <h2><span class="screenreader">is deze minor</span>Geschikt voor mij?</h2>
           <p>
             We gaan werken met verschillende webtechnologieën.
             Samen met bedrijven uit de creatieve industrie verkennen we de grenzen van wat er mogelijk is op het web.
@@ -76,10 +80,10 @@
       </section>
 
       <section class="page-section special">
-        <article>
+        <article id="testimonials">
           <h2>Wat vonden anderen van de minor?</h2>
         </article>
-        <div class="testimonials">
+        <div class="testimonials" aria-label="feedback van oud studenten">
           <blockquote>
             Voor ik begon met de minor had ik weinig kennis en skill in Javascript.
             Ik kon net een class toevoegen en weghalen met jQuery.
@@ -115,7 +119,7 @@
           <img src="public/images/icons/keyboard.svg" alt="">
         </div>
 
-        <article>
+        <article id="toelatingseisen">
           <h2>Wat moet ik al kunnen?</h2>
           <p>
             Je hebt aantoonbaar affiniteit met werken met webtechnologie (HTML, CSS en JavaScript).
@@ -127,26 +131,143 @@
           </p>
         </article>
       </section>
-    </main>
 
-    <div class="site-footer-wrapper">
-      <footer class="site-footer">
+      <section class="page-section">
+        <div class="cmd-icon">
+          <img src="public/images/icons/calender.svg" alt="">
+        </div>
+
+        <article id="lesprogramma">
+          <h2>Welke lessen krijg ik?</h2>
+          <details class="course">
+            <summary role="button">
+              <h3>CSS to the Rescue</h3>
+            </summary>
+            <p>
+              In dit vak gaan we aan de slag met CSS.
+              We gaan goed werkende responsive oplossingen bedenken én maken voor complexe interfaces.
+              Dat is erg belangrijk, te veel ontwerpers kunnen dit niet zo goed.
+              Het is ook belangrijk om een aantal basisprincipes achter CSS goed te begrijpen.
+              Niet alleen op praktisch niveau, ook op experimenteel niveau.
+              Zonder goed begrip van de basisprincipes is CSS magisch en weird.
+              Met een goed begrip heb je CSS onder controle en kan je het laten doen wat jij wil.
+              En dat is nodig om webpagina’s vorm te geven met attention to detail.
+              Webpagina’s waar mensen blij van worden.
+            </p>
+          </details>
+          <details class="course">
+            <summary role="button">
+              <h3>Web App from Scratch</h3>
+            </summary>
+            <p>
+              In dit vak gaan we een web app maken zonder frameworks of onnodige libraries, dus zoveel mogelijk met native HTML, CSS & JavaScript.
+              Het eindproduct is een modulair opgezet prototype voor een single page web app.
+              Data wordt opgehaald uit een externe API, waar nodig gemanipuleerd en vervolgens getoond in de Web App.
+              Je leert hoe je structuur aanbrengt in je code en hoe je hiermee 'from scratch' een (prototype voor een) web app maakt.
+              Met deze kennis begrijp je daarnaast beter hoe bestaande api’s, libraries en frameworks werken.
+            </p>
+          </details>
+          <details class="course">
+            <summary role="button">
+              <h3>Project 1</h3>
+            </summary>
+            <p>
+              Een case waarin je gaat toepassen wat je bij de vakken Webapp from Scratch en CSS To The Rescue hebt geleerd.
+            </p>
+          </details>
+          <details class="course">
+            <summary role="button">
+              <h3>Browser Technologies</h3>
+            </summary>
+            <p>
+              Een van de mooiste principes van het web is dat het er echt is voor iedereen.
+              Iedereen met een computer en een browser moet gebruik kunnen maken van het web.
+              Het web is geen gecontroleerde (programmeer) omgeving.
+              Je kan er gerust van uit gaan dat niemand precies hetzelfde te zien krijgt als wat jij ziet in jouw browser.
+              Er zijn natuurlijk de technische beperkingen.
+              Zoals afmetingen van de browser, grootte van het apparaat, manier van interactie, kwaliteit van de hardware, kwaliteit van het netwerk.
+              En er zijn mensen.
+              Allemaal verschillende mensen&hellip;
+            </p>
+            <p>
+              In het vak Browser Technologies leer je hoe je goede, robuuste, toegankelijke websites maakt.
+              Je gaat leren over Progressive Enhancement, Feature Detection en Fallback.
+              Het web is er voor iedereen.
+              In dit vak leer je hoe je daarvoor kan zorgen.
+            </p>
+          </details>
+          <details class="course">
+            <summary role="button">
+              <h3>Performance Matters</h3>
+            </summary>
+            <p>
+              In het vak Performance Matters gaan we van bestaande web applicaties de performance verbeteren.
+              We werken aan HTML, CSS en JavaScript optimalistaties en hoe we het HTTP protocol beter kunnen benutten.
+            </p>
+            <p>
+              Onder andere de Service Worker (als onderdeel van Progressive Web Apps) wordt ingezet om de performance van applicaties te verbeteren, maar ook om offline gebruik van de applicaties mogelijk te maken.
+            </p>
+          </details>
+          <details class="course">
+            <summary role="button">
+              <h3>Project 2</h3>
+            </summary>
+            <p>
+              Case waarin je gaat toepassen wat je bij de vakken Performance Maters en Brower technologies hebt geleerd.
+            </p>
+          </details>
+          <details class="course">
+            <summary role="button">
+              <h3>Real-Time Web</h3>
+            </summary>
+            <p>
+              In het vak Real-Time Web leer je hoe je real-time / live data op een inzichtelijke manier toegankelijk kunt maken.
+              Terwijl je bij het vak ‘Web of Things’ leert hoe je sensor data uit “slimme” devices kunt lezen en deze devices zelfs kunt aansturen, ga je bij RTW precies dit soort data real-time inzichtelijk en toegankelijk maken voor eindgebruikers.
+            </p>
+          </details>
+          <details class="course">
+            <summary role="button">
+              <h3>Web of Things</h3>
+            </summary>
+            <p>
+              WoT (Web of Things / Internet of Things) is een uitdagend nieuw veld voor de CMD'er; meer en meer diensten maken gebruik van een diversiteit aan connected devices voor een goede UX.
+              In het vak Web of Things bouwt elke student zijn/haar eigen connected device waarmee (stand-alone of als sensornetwerk) data gegenereerd en op het web gepubliceerd kan worden, en andersom ook aangestuurd kan worden vanaf het web.
+            </p>
+          </details>
+          <details class="course">
+            <summary role="button">
+              <h3>Project 3</h3>
+            </summary>
+            <p>
+              Case waarin je gaat toepassen wat je bij de vakken Real-time web en Web of things hebt geleerd.
+            </p>
+          </details>
+          <details class="course">
+            <summary role="button">
+              <h3>Meesterproef</h3>
+            </summary>
+            <p>
+              In de meesterproef laten studenten zien wat ze allemaal hebben geleerd.
+              Er worden een aantal projecten (voor echte opdrachtgevers) aangeboden waar studenten in 5 weken een oplossing voor een probleem moeten verzinnen en maken.
+            </p>
+          </details>
+        </article>
+      </section>
+
+      <div class="page-section-wrapper">
         <section class="page-section">
           <div class="cmd-icon">
             <img src="public/images/icons/pointer.svg" alt="">
           </div>
+
           <article>
-            <div class="action">
-              <h2>
-                Klinkt interessant?<br>
-                Meld je aan!
-              </h2>
-              <a class="action-button" href="">Aanmelden via SIS</a>
-            </div>
+            <h2>Klinkt interessant?</h2>
+            <h2>Meld je aan!<span class="screenreader">voor deze minor</span></h2>
+            <a class="action-button" href="https://sis.hva.nl" role="button">Aanmelden<span class="screenreader">voor deze minor</span> via SIS</a>
           </article>
         </section>
-      </footer>
-    </div>
+      </div>
+    </main>
 
     <script type="text/javascript" src="public/js/script.js"></script>
   </body>
