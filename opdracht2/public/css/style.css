@@ -221,7 +221,9 @@ a:active {
 */
 
 .site-header-wrapper {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   min-height: 90vh;
   background-color: var(--color-primary);
@@ -232,7 +234,6 @@ a:active {
   width: 100%;
   max-width: calc(75rem + (2 * var(--spacing-unit)));
   padding: var(--spacing-unit);
-  margin: 0 auto;
 }
 
 .site-header .cmd-icon {
@@ -255,54 +256,6 @@ a:active {
   .site-header h1 {
     margin-bottom: calc(3 * var(--spacing-unit));
   }
-}
-
-/*
-====================
-  Site Nav
-====================
-*/
-
-.site-nav {
-  display: block;
-  width: 100%;
-  max-width: calc(75rem + (3 * var(--spacing-unit)));
-  margin: 0 auto;
-}
-
-.site-nav > ul {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.site-nav li {
-  display: block;
-  margin: var(--spacing-unit);
-}
-@media all and (min-width: 48rem) {
-  .site-nav li {
-    margin: calc(1.5 * var(--spacing-unit));
-  }
-}
-
-.site-nav a {
-  display: block;
-  padding-bottom: .625rem;
-  border-bottom: .125rem solid transparent;
-  color: var(--color-black);
-  font-size: 1em;
-  font-weight: 300;
-  line-height: 1;
-}
-.site-nav a.active,
-.site-nav a:focus,
-.site-nav a:hover,
-.site-nav a:active {
-  border-bottom-color: var(--color-black);
-}
-.site-nav a.active {
-  font-weight: 700;
 }
 
 /*
