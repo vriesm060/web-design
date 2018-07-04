@@ -292,7 +292,7 @@ main {
   }
 }
 
-.page-section > *:not(.cmd-icon) {
+.page-section > *:not(.cmd-icon):not(.testimonials) {
   display: block;
   width: 100%;
   max-width: calc(37.5rem + (2 * var(--spacing-unit)));
@@ -319,7 +319,7 @@ main {
   display: none;
 }
 
-.page-section-wrapper article h2 {
+.page-section-wrapper h2 {
   margin-bottom: var(--spacing-unit);
 }
 
