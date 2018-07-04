@@ -279,6 +279,7 @@ main {
   display: block;
   width: 100%;
   max-width: calc(75rem + (2 * var(--spacing-unit)));
+  min-height: 100vh;
   padding: calc(1.5 * var(--spacing-unit)) 0;
   margin: 0 auto;
 }
@@ -287,24 +288,25 @@ main {
 }
 @media all and (min-width: 48rem) {
   .page-section {
-    padding: calc(3 * var(--spacing-unit)) 0;
+    padding: calc(5 * var(--spacing-unit)) 0;
   }
 }
 
-.page-section > article {
+.page-section > *:not(.cmd-icon) {
   display: block;
   width: 100%;
   max-width: calc(37.5rem + (2 * var(--spacing-unit)));
   padding: 0 var(--spacing-unit);
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.page-section > article h2 {
+.page-section h2 {
   margin-bottom: calc(3 * var(--spacing-unit));
 }
 
-.page-section > article p {
-  margin: var(--spacing-unit) 0;
+.page-section p {
+  margin: var(--spacing-unit) auto;
 }
 
 .page-section-wrapper {
