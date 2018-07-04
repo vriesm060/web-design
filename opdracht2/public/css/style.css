@@ -300,7 +300,7 @@ main {
 }
 
 .page-section > article h2 {
-  margin-bottom: calc(2 * var(--spacing-unit));
+  margin-bottom: calc(3 * var(--spacing-unit));
 }
 
 .page-section > article p {
