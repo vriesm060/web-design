@@ -205,7 +205,7 @@ a:active {
   width: 85%;
   height: 85%;
   border-radius: 50%;
-  background-color: rgba(255, 204, 0, .75);
+  background-color: var(--color-primary);
   content: '';
 }
 
