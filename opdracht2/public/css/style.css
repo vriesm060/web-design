@@ -27,12 +27,12 @@
     /* Button fonts */
     --button-font-size: 1.25em;
     --button-font-weight: 700;
-    --button-line-height: 1;
+    --button-line-height: 1.4;
 
   /* Spacing */
   --spacing-unit: 1.5rem;
 }
-@media all and (min-width: 48rem) {
+@media all and (min-width: 48em) {
   :root {
     /* Base fonts */
     --base-font-size: 1.25em;
@@ -84,8 +84,8 @@ h2 {
 
 h3 {
   font-size: var(--button-font-size);
-  font-weight: 300;
-  line-height: 1;
+  font-weight: var(--heading-font-weight);
+  line-height: var(--button-line-height);
 }
 
 p {
@@ -112,13 +112,13 @@ a:active {
 /* Hide info for screen readers: */
 .screenreader {
   position: absolute;
-  height: 1px;
+  overflow: hidden !important;
   width: 1px;
+  height: 1px;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: polygon(0 0, 0 0, 0 0);
   -webkit-clip-path: polygon(0 0, 0 0, 0 0);
-  overflow: hidden !important;
 }
 
 /*
@@ -149,7 +149,7 @@ a:active {
   display: inline-block;
   min-width: 12.5rem;
   height: 3.125rem;
-  padding: calc((3.125rem - var(--button-font-size)) / 2);
+  padding: calc((3.125rem - var(--button-font-size)) / 2) var(--spacing-unit);
   border: 0;
   border-radius: .3125rem;
   outline: 0;
@@ -159,14 +159,14 @@ a:active {
   font-size: var(--button-font-size);
   font-weight: var(--button-font-weight);
   text-align: center;
-  line-height: 1.4;
+  line-height: var(--button-line-height);
   cursor: pointer;
   transition: all .3s ease-in-out;
 }
-@media all and (min-width: 48rem) {
+@media all and (min-width: 48em) {
   .action-button {
     height: 4.0625rem;
-    padding: calc((4.0625rem - var(--button-font-size)) / 2);
+    padding: calc((4.0625rem - var(--button-font-size)) / 2) var(--spacing-unit);
   }
 }
 .action-button::after {
@@ -183,11 +183,13 @@ a:active {
   transition: all .3s ease-in-out;
 }
 .action-button:focus,
-.action-button:hover {
+.action-button:hover,
+.action-button:active {
   top: .3125rem;
 }
 .action-button:focus::after,
-.action-button:hover::after {
+.action-button:hover::after,
+.action-button:active::after {
   top: 0;
 }
 
@@ -206,7 +208,7 @@ a:active {
   margin: var(--spacing-unit);
   margin-top: 0;
 }
-@media all and (min-width: 48rem) {
+@media all and (min-width: 48em) {
   .cmd-icon {
     width: 12.5rem;
     height: 12.5rem;
@@ -258,7 +260,7 @@ a:active {
   margin: 0;
   margin-bottom: var(--spacing-unit);
 }
-@media all and (min-width: 48rem) {
+@media all and (min-width: 48em) {
   .site-header .cmd-icon {
     margin-bottom: calc(2 * var(--spacing-unit));
   }
@@ -268,7 +270,7 @@ a:active {
   clear: both;
   margin-bottom: calc(1.5 * var(--spacing-unit));
 }
-@media all and (min-width: 48rem) {
+@media all and (min-width: 48em) {
   .site-header h1 {
     margin-bottom: calc(3 * var(--spacing-unit));
   }
@@ -302,7 +304,7 @@ main {
 .page-section.special {
   padding: 0;
 }
-@media all and (min-width: 48rem) {
+@media all and (min-width: 48em) {
   .page-section {
     padding: calc(3 * var(--spacing-unit)) 0;
   }
@@ -370,7 +372,7 @@ main {
   font-style: italic;
   line-height: var(--base-line-height);
 }
-@media all and (min-width: 48rem) {
+@media all and (min-width: 48em) {
   .testimonials blockquote {
     margin: calc(2 * var(--spacing-unit)) auto;
   }
@@ -410,11 +412,11 @@ main {
   width: 100%;
   height: 3.125rem;
   padding: calc((3.125rem - var(--button-font-size)) / 2);
-  border-radius: 5px;
+  border-radius: .3125rem;
   background-color: var(--color-grey);
   cursor: pointer;
 }
-@media all and (min-width: 48rem) {
+@media all and (min-width: 48em) {
   .course summary {
     height: 4.0625rem;
     padding: calc((4.0625rem - var(--button-font-size)) / 2);
@@ -428,7 +430,7 @@ main {
   height: 1rem;
   padding: .125rem;
 }
-@media all and (min-width: 48rem) {
+@media all and (min-width: 48em) {
   .course summary::-webkit-details-marker {
     padding: .25rem;
   }
@@ -444,5 +446,4 @@ main {
   width: 100%;
   padding: var(--spacing-unit);
   margin: 0;
-  /* background-color: var(--color-grey); */
 }
