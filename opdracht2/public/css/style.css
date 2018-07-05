@@ -122,6 +122,21 @@ a:active {
 
 /*
 ====================
+  Call to Action
+====================
+*/
+
+.call-to-action {
+  margin: calc(1.5 * var(--spacing-unit)) auto;
+}
+@media all and (min-width: 48em) {
+  .call-to-action {
+    margin: calc(3 * var(--spacing-unit)) auto;
+  }
+}
+
+/*
+====================
   Action Button
 ====================
 */
@@ -185,8 +200,8 @@ a:active {
   position: relative;
   z-index: 2;
   float: left;
-  width: 6.25rem;
-  height: 6.25rem;
+  width: 4rem;
+  height: 4rem;
   margin: var(--spacing-unit);
   margin-top: 0;
 }
@@ -288,7 +303,7 @@ main {
 }
 @media all and (min-width: 48rem) {
   .page-section {
-    padding: calc(5 * var(--spacing-unit)) 0;
+    padding: calc(3 * var(--spacing-unit)) 0;
   }
 }
 
@@ -302,7 +317,12 @@ main {
 }
 
 .page-section h2 {
-  margin-bottom: calc(3 * var(--spacing-unit));
+  margin-bottom: calc(1.5 * var(--spacing-unit));
+}
+@media all and (min-width: 48em) {
+  .page-section h2 {
+    margin-bottom: calc(3 * var(--spacing-unit));
+  }
 }
 
 .page-section p {
