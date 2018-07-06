@@ -4,30 +4,31 @@
   --color-secondary: #A6D5C2;
   --color-black: #020203;
   --color-grey: #F2F2F2;
+  --color-danger: #EB5D56;
   --color-link: #004899;
 
   /* Fonts */
   --font-family: 'Open Sans', sans-serif;
 
     /* Base fonts */
-    --base-font-size: 1em;
+    --base-font-size: 1rem;
     --base-font-weight: 400;
     --base-line-height: 1.7;
 
     /* Title fonts */
-    --title-font-size: 2.75em;
+    --title-font-size: 2.75rem;
     --title-font-weight: 300;
     --title-line-height: 1.4;
 
     /* Heading fonts */
-    --heading-font-size: 1.75em;
+    --heading-font-size: 1.75rem;
     --heading-font-weight: 300;
     --heading-line-height: 1.4;
 
     /* Button fonts */
-    --button-font-size: 1.25em;
+    --button-font-size: 1.25rem;
     --button-font-weight: 700;
-    --button-line-height: 1.4;
+    --button-line-height: 1;
 
   /* Spacing */
   --spacing-unit: 1.5rem;
@@ -35,16 +36,16 @@
 @media all and (min-width: 48em) {
   :root {
     /* Base fonts */
-    --base-font-size: 1.25em;
+    --base-font-size: 1.25rem;
 
     /* Title fonts */
-    --title-font-size: 4.5em;
+    --title-font-size: 4.5rem;
 
     /* Heading fonts */
-    --heading-font-size: 3em;
+    --heading-font-size: 3rem;
 
     /* Button fonts */
-    --button-font-size: 1.5em;
+    --button-font-size: 1.5rem;
   }
 }
 
@@ -86,6 +87,12 @@ h3 {
   font-size: var(--button-font-size);
   font-weight: var(--heading-font-weight);
   line-height: var(--button-line-height);
+}
+
+h4 {
+  font-size: var(--base-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--heading-line-height);
 }
 
 p {
@@ -285,6 +292,79 @@ main {
 
 /*
 ====================
+  Qualification
+====================
+*/
+
+.qualification {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  padding: var(--spacing-unit);
+  background-color: var(--color-grey);
+  box-shadow: 0 0 .3125rem rgba(0,0,0,.25);
+}
+
+.qualification progress[value] {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 45rem;
+  height: 3.125rem;
+  margin: 0 auto;
+  margin-top: calc(1.5 * var(--spacing-unit));
+  -webkit-appearance: none;
+  appearance: none;
+}
+@media all and (min-width: 48em) {
+  .qualification progress[value] {
+    margin: var(--spacing-unit) auto;
+    margin-top: calc(2 * var(--spacing-unit));
+  }
+}
+.qualification progress[value]::before {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + (var(--spacing-unit) / 2));
+  display: block;
+  content: 'Niet zo geschikt';
+}
+.qualification progress[value]::after {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + (var(--spacing-unit) / 2));
+  display: block;
+  content: 'Helemaal voor mij';
+}
+
+.qualification progress::-webkit-progress-bar {
+  overflow: hidden;
+  padding: calc(var(--spacing-unit) / 2);
+  border-radius: 1.5625rem;
+  background-color: #555;
+}
+
+.qualification progress::-webkit-progress-value {
+  border-radius: 1.5625rem .625rem .625rem 1.5625rem;
+  background-color: var(--color-secondary);
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, .2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, .2) 50%,
+    rgba(255, 255, 255, .2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 50px 50px;
+}
+
+/*
+====================
   Page Section
 ====================
 */
@@ -307,11 +387,11 @@ main {
 }
 
 .page-section > .content {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   width: 100%;
-  max-width: 47rem;
+  max-width: 48rem;
   padding: 0 var(--spacing-unit);
+  margin: 0 auto;
 }
 
 .page-section h2 {
@@ -346,7 +426,7 @@ main {
 .subjects {
   display: flex;
   flex-wrap: wrap;
-  background-color: green;
+  margin: calc(var(--spacing-unit) / -2);
 }
 
 /* Hide the original checkbox: */
@@ -358,27 +438,179 @@ main {
 
 .subjects input[type="checkbox"] + label {
   display: flex;
-  height: 4.0625rem;
-  padding: calc((4.0625rem - 1.25rem) / 2);
+  height: 3.125rem;
+  padding: calc((3.125rem - var(--base-font-size)) / 2);
   border-radius: .3125rem;
   margin: calc(var(--spacing-unit) / 2);
   background-color: var(--color-grey);
   font-size: var(--base-font-size);
-  font-weight: var(--heading-font-weight);
+  font-weight: var(--base-font-weight);
   line-height: 1.2;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+.subjects input[type="checkbox"]:focus + label,
+.subjects input[type="checkbox"] + label:hover {
+  transform: scale(.9,.9);
+}
+.subjects input[type="checkbox"]:checked + label {
+  background-color: var(--color-secondary);
+}
+@media all and (min-width: 48em) {
+  .subjects input[type="checkbox"] + label {
+    height: 4.0625rem;
+    padding: calc((4.0625rem - 1.25rem) / 2);
+  }
 }
 .subjects input[type="checkbox"] + label::before {
   display: block;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: var(--base-font-size);
+  height: var(--base-font-size);
   border: .0625rem solid var(--color-black);
   border-radius: .3125rem;
-  margin-right: calc((4.0625rem - 1.25rem) / 2);
+  margin-right: calc((3.125rem - var(--base-font-size)) / 2);
   background-color: transparent;
   content: '';
 }
+.subjects input[type="checkbox"]:checked + label::before {
+  border-color: transparent;
+  content: url(../images/icons/check.svg);
+}
+@media all and (min-width: 48em) {
+  .subjects input[type="checkbox"] + label::before {
+    margin-right: calc((4.0625rem - var(--base-font-size)) / 2);
+  }
+}
 
+.subjects > span {
+  flex: 1 0 100%;
+}
 
+.subjects .action-button {
+  margin: calc(var(--spacing-unit) / 2);
+  margin-top: calc(2.5 * var(--spacing-unit));
+}
+
+/*
+====================
+  Courses
+====================
+*/
+
+.course {
+  display: block;
+  width: 100%;
+  margin: var(--spacing-unit) 0;
+}
+
+.course summary {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 3.125rem;
+  padding: calc((3.125rem - var(--button-font-size)) / 2);
+  border-radius: .3125rem;
+  outline: 0;
+  background-color: var(--color-grey);
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+.course summary:focus,
+.course summary:hover,
+.course[open] summary {
+  background-color: var(--color-primary);
+}
+@media all and (min-width: 48em) {
+  .course summary {
+    height: 4.0625rem;
+    padding: calc((4.0625rem - var(--button-font-size)) / 2);
+  }
+}
+.course summary::before {
+  flex: 0 0 auto;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  padding: .125rem;
+  content: url(../images/icons/arrow.svg);
+  transform: rotate(-90deg);
+  transition: all .3s ease-in-out;
+}
+.course[open] summary::before {
+  transform: rotate(0deg);
+}
+@media all and (min-width: 48em) {
+  .course summary::before {
+    padding: .25rem;
+  }
+}
+.course summary::-webkit-details-marker {
+  display: none;
+}
+
+.course summary > h3 {
+  flex: 1 0 auto;
+  margin-left: calc((3.125rem - var(--button-font-size)) / 2);
+}
+
+.course div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: var(--spacing-unit);
+  margin: 0;
+}
+@media all and (min-width: 37em) {
+  .course div {
+    flex-wrap: nowrap;
+  }
+}
+
+.course p {
+  max-width: none;
+  margin: var(--spacing-unit) 0;
+}
+
+.course aside {
+  display: block;
+  flex: 1 0 auto;
+  margin-top: var(--spacing-unit);
+}
+@media all and (min-width: 37em) {
+  .course aside {
+    max-width: 10rem;
+    margin-left: calc(2 * var(--spacing-unit));
+  }
+}
+
+.course aside li {
+  display: flex;
+  margin: var(--spacing-unit) 0;
+  font-size: var(--base-font-size);
+  font-weight: var(--base-font-weight);
+  line-height: 1;
+}
+.course aside li::before {
+  flex: 0 0 auto;
+  display: block;
+  box-sizing: border-box;
+  width: var(--base-font-size);
+  height: var(--base-font-size);
+  padding: .25rem;
+  border: .0625rem solid var(--color-black);
+  border-radius: .3125rem;
+  margin-right: var(--spacing-unit);
+  background-color: transparent;
+  line-height: 0;
+  content: '';
+}
+.course aside li.checked::before {
+  border-color: var(--color-secondary);
+  background-color: var(--color-secondary);
+  content: url(../images/icons/check.svg);
+}
 
 /*
 ====================
@@ -426,58 +658,4 @@ main {
 }
 .testimonials blockquote:nth-child(even)::before {
   background: url(../images/icons/woman.svg) no-repeat center;
-}
-
-/*
-====================
-  Courses
-====================
-*/
-
-.course {
-  display: block;
-  width: 100%;
-  margin: var(--spacing-unit) 0;
-}
-
-.course summary {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 3.125rem;
-  padding: calc((3.125rem - var(--button-font-size)) / 2);
-  border-radius: .3125rem;
-  background-color: var(--color-grey);
-  cursor: pointer;
-}
-@media all and (min-width: 48em) {
-  .course summary {
-    height: 4.0625rem;
-    padding: calc((4.0625rem - var(--button-font-size)) / 2);
-  }
-}
-
-.course summary::-webkit-details-marker {
-  flex: 0 0 auto;
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  padding: .125rem;
-}
-@media all and (min-width: 48em) {
-  .course summary::-webkit-details-marker {
-    padding: .25rem;
-  }
-}
-
-.course summary > h3 {
-  flex: 1 0 auto;
-  margin-left: calc((3.125rem - var(--button-font-size)) / 2);
-}
-
-.page-section > article .course p {
-  display: block;
-  width: 100%;
-  padding: var(--spacing-unit);
-  margin: 0;
 }
