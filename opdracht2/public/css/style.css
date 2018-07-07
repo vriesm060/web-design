@@ -306,6 +306,13 @@ main {
   padding: var(--spacing-unit);
   background-color: var(--color-grey);
   box-shadow: 0 0 .3125rem rgba(0,0,0,.25);
+  transform: translateY(12rem);
+  transition: all .3s ease-in-out;
+  pointer-events: none;
+}
+.qualification.show {
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .qualification progress[value] {
@@ -502,6 +509,10 @@ main {
 .subjects .action-button {
   margin: calc(var(--spacing-unit) / 2);
   margin-top: calc(2.5 * var(--spacing-unit));
+}
+.subjects .action-button:disabled {
+  opacity: .25;
+  pointer-events: none;
 }
 
 /*

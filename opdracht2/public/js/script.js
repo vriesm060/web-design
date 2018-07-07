@@ -77,14 +77,23 @@
     init: function () {
       var self = this;
 
+      document.querySelector('.subjects .action-button').setAttribute('disabled', true);
+
       this.el.forEach(function (subject) {
         subject.addEventListener('change', function (e) {
           if (this.checked) {
+            document.querySelector('.qualification').classList.add('show');
+            document.querySelector('.subjects .action-button').removeAttribute('disabled');
             self.checkSubjects(this.value);
             progress.calcPercentage(this.value, true);
           } else {
             self.uncheckSubjects(this.value);
             progress.calcPercentage(this.value, false);
+          }
+
+          if (progress.el.value == 0) {
+            document.querySelector('.subjects .action-button').setAttribute('disabled', true);
+            document.querySelector('.qualification').classList.remove('show');
           }
         });
       });
