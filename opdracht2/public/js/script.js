@@ -32,7 +32,44 @@
   courses.init();
 
   var progress = {
-    el: document.querySelector('.qualification > progress')
+    el: document.querySelector('.qualification > progress'),
+    percentage: 0,
+    calcPercentage: function (val, checked) {
+      var allSubjects = courses.all.map(function (course) {
+        return course.subjects;
+      });
+
+      allSubjects = allSubjects.concat.apply([], allSubjects);
+
+      var selectedSubjects = allSubjects.filter(function (subject) {
+        return subject == val;
+      });
+
+      // matched subjects
+
+      var totalSubjects = allSubjects.length;
+      var numOfSubjects = selectedSubjects.length;
+      var percentage = Math.round((numOfSubjects / totalSubjects) * 100);
+
+      if (checked) {
+        this.percentage += percentage;
+      } else {
+        this.percentage -= percentage;
+      }
+
+      this.renderPercentage(this.percentage);
+    },
+    renderPercentage: function (perc) {
+      this.el.value = perc;
+
+      if (this.el.value >= 20 && this.el.value < 50) {
+        this.el.dataset.zone = 'medium';
+      } else if (this.el.value >= 50) {
+        this.el.dataset.zone = 'save';
+      } else {
+        this.el.dataset.zone = 'danger';
+      }
+    }
   };
 
   var selection = {
@@ -44,8 +81,10 @@
         subject.addEventListener('change', function (e) {
           if (this.checked) {
             self.checkSubjects(this.value);
+            progress.calcPercentage(this.value, true);
           } else {
             self.uncheckSubjects(this.value);
+            progress.calcPercentage(this.value, false);
           }
         });
       });
