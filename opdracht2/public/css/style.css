@@ -390,6 +390,7 @@ main {
 }
 @media all and (min-width: 48em) {
   .qualification progress[value] {
+    max-width: none;
     margin-top: 0;
   }
   .qualification progress[value]::before,
@@ -414,17 +415,20 @@ main {
 
 .qualification .tooltip {
   position: fixed;
-  left: 0;
+  left: -90px;
   bottom: calc(9.125rem - var(--spacing-unit));
   z-index: 3;
   display: block;
+  opacity: 0;
   width: 150px;
   padding: var(--spacing-unit);
   border-radius: .3125rem;
   background-color: var(--color-primary);
   font-size: .75em;
   transform: rotate(90deg);
-  transform-origin: 50% 50%;
+  transform-origin: 100% 100%;
+  transition: all .3s ease-in-out;
+  pointer-events: none;
 }
 .qualification .tooltip::after {
   position: absolute;
@@ -438,6 +442,14 @@ main {
   border-bottom-right-radius: .3125rem;
   transform: rotate(-45deg);
   content: '';
+}
+.qualification progress[value] + .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+.qualification progress[value="0"] + .tooltip {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /*

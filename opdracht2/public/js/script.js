@@ -33,6 +33,7 @@
 
   var progress = {
     el: document.querySelector('.qualification > progress'),
+    tooltip: document.querySelector('.qualification .tooltip'),
     percentage: 0,
     calcPercentage: function (val, checked) {
       var allSubjects = courses.all.map(function (course) {
@@ -58,6 +59,7 @@
       }
 
       this.renderPercentage(this.percentage);
+      this.changeTooltip(this.percentage);
     },
     renderPercentage: function (perc) {
       this.el.value = perc;
@@ -69,6 +71,12 @@
       } else {
         this.el.dataset.zone = 'danger';
       }
+    },
+    changeTooltip: function (perc) {
+      var progressbarLength = this.el.offsetWidth - 24;
+      var tooltipLength = this.tooltip.offsetHeight;
+      var left = 'calc(-5.625rem + ' + Math.round((perc / 100) * progressbarLength) + 'px - (' + tooltipLength + 'px / 2))';
+      this.tooltip.style.left = left;
     }
   };
 
