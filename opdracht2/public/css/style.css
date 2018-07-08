@@ -414,21 +414,7 @@ main {
 }
 
 .qualification .tooltip {
-  position: fixed;
-  left: -90px;
-  bottom: calc(9.125rem - var(--spacing-unit));
-  z-index: 3;
-  display: block;
-  opacity: 0;
-  width: 150px;
-  padding: var(--spacing-unit);
-  border-radius: .3125rem;
-  background-color: var(--color-primary);
-  font-size: .75em;
-  transform: rotate(90deg);
-  transform-origin: 100% 100%;
-  transition: all .3s ease-in-out;
-  pointer-events: none;
+  display: none;
 }
 .qualification .tooltip::after {
   position: absolute;
@@ -443,6 +429,26 @@ main {
   transform: rotate(-45deg);
   content: '';
 }
+@media all and (min-width: 48em) {
+  .qualification .tooltip {
+    position: fixed;
+    left: -90px;
+    bottom: calc(9.125rem - var(--spacing-unit));
+    z-index: 3;
+    display: block;
+    opacity: 0;
+    width: 150px;
+    padding: var(--spacing-unit);
+    border-radius: .3125rem;
+    background-color: var(--color-primary);
+    font-size: .75em;
+    transform: rotate(90deg);
+    transform-origin: 100% 100%;
+    transition: all .3s ease-in-out;
+    pointer-events: none;
+  }
+}
+
 .qualification progress[value] + .tooltip {
   opacity: 1;
   pointer-events: auto;
