@@ -321,7 +321,7 @@ main {
     width: 100vh;
     height: 9.125rem;
     padding: calc(2 * var(--spacing-unit));
-    transform: rotate(-90deg) translateY(0);
+    transform: rotate(-90deg) translateY(-9.125rem);
     transform-origin: 100% 0;
   }
   .qualification.show {
@@ -410,6 +410,34 @@ main {
     bottom: -3rem;
     transform-origin: 100% 100%;
   }
+}
+
+.qualification .tooltip {
+  position: fixed;
+  left: 0;
+  bottom: calc(9.125rem - var(--spacing-unit));
+  z-index: 3;
+  display: block;
+  width: 150px;
+  padding: var(--spacing-unit);
+  border-radius: .3125rem;
+  background-color: var(--color-primary);
+  font-size: .75em;
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+}
+.qualification .tooltip::after {
+  position: absolute;
+  right: -.75rem;
+  top: calc((100% - 1.5rem) / 2);
+  display: block;
+  border-left: .75rem solid transparent;
+  border-right: .75rem solid var(--color-primary);
+  border-top: .75rem solid transparent;
+  border-bottom: .75rem solid var(--color-primary);
+  border-bottom-right-radius: .3125rem;
+  transform: rotate(-45deg);
+  content: '';
 }
 
 /*
