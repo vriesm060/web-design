@@ -385,7 +385,7 @@ main {
 .qualification progress[data-zone="save"]::-webkit-progress-value {
   background-color: var(--color-secondary);
 }
-.qualification progress[value="100"]::-webkit-progress-value {
+.qualification progress.full::-webkit-progress-value {
   border-radius: 1.5625rem;
 }
 @media all and (min-width: 48em) {
