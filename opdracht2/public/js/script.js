@@ -157,4 +157,21 @@
 
   selection.init();
 
+  var level = {
+    el: document.querySelectorAll('.levels input[type="radio"]'),
+    init: function () {
+      var self = this;
+
+      this.el.forEach(function (input) {
+        input.addEventListener('change', function (e) {
+          if (this.checked) {
+            console.log('checked');
+          }
+        });
+      });
+    }
+  };
+
+  level.init();
+
 })();
