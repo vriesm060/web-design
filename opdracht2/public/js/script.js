@@ -35,6 +35,7 @@
     el: document.querySelector('.qualification > progress'),
     tooltip: document.querySelector('.qualification .tooltip'),
     percentage: 0,
+    points: [0, 0, 0],
     calcPercentage: function (val, checked) {
       var allSubjects = courses.all.map(function (course) {
         return course.subjects;
@@ -58,6 +59,31 @@
         this.percentage -= percentage;
       }
 
+      this.renderPercentage(this.percentage);
+      this.renderTooltip(this.percentage);
+    },
+    addLevel: function (fieldset, value) {
+      var reducer = function (arr) {
+        return arr.reduce(function (acc, val) {
+          return acc + val;
+        });
+      }
+
+      this.percentage -= reducer(this.points);
+
+      switch (fieldset) {
+        case 'html':
+          this.points[0] = Number(value);
+          break;
+        case 'css':
+          this.points[1] = Number(value);
+          break;
+        case 'js':
+          this.points[2] = Number(value);
+          break;
+      }
+
+      this.percentage += reducer(this.points);
       this.renderPercentage(this.percentage);
       this.renderTooltip(this.percentage);
     },
@@ -165,7 +191,7 @@
       this.el.forEach(function (input) {
         input.addEventListener('change', function (e) {
           if (this.checked) {
-            console.log('checked');
+            progress.addLevel(this.parentNode.name, this.value);
           }
         });
       });
