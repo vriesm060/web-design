@@ -62,9 +62,9 @@
     renderPercentage: function (perc) {
       this.el.value = perc;
 
-      if (this.el.value >= 20 && this.el.value < 50) {
+      if (this.el.value >= 20 && this.el.value < 43) {
         this.el.dataset.zone = 'medium';
-      } else if (this.el.value >= 50) {
+      } else if (this.el.value >= 43) {
         this.el.dataset.zone = 'save';
       } else {
         this.el.dataset.zone = 'danger';
