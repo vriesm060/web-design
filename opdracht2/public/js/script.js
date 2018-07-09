@@ -85,7 +85,7 @@
 
       this.percentage += reducer(this.points);
       this.renderPercentage(this.percentage);
-      this.renderTooltip(this.percentage);
+      this.renderTooltip(this.percentage, true);
     },
     renderPercentage: function (perc) {
       this.el.value = perc;
@@ -104,10 +104,7 @@
         this.el.classList.remove('full');
       }
     },
-    renderTooltip: function (perc) {
-      console.log(perc + '%');
-      console.log(selection.selected);
-
+    renderTooltip: function (perc, fieldset = false) {
       var msg;
       var msgs = [
         'Alleen HTML en/of CSS',
@@ -183,6 +180,22 @@
             break;
         }
       });
+
+      if (fieldset) {
+        var points = this.points.reduce(function (acc, val) {
+          return acc + val;
+        });
+
+        if (points < -5) {
+          msg = 'Slecht niveau';
+        } else if (points >= -5 && points < 10) {
+          msg = 'Oke niveau';
+        } else if (points >= 10 && points < 20) {
+          msg = 'Goed niveau';
+        } else {
+          msg = 'Uitstekend niveau';
+        }
+      }
 
       var progressbarLength = this.el.offsetWidth - 24;
       var tooltipLength = this.tooltip.offsetHeight;
