@@ -105,20 +105,84 @@
       }
     },
     renderTooltip: function (perc) {
-
       console.log(perc + '%');
-
       console.log(selection.selected);
 
       var msg;
+      var msgs = [
+        'Alleen HTML en/of CSS',
+        'Alleen JavaScript',
+        'Weinig technische interesses',
+        'Veel technische interesses',
+        'Gezonde mix'
+      ];
 
       // Add tooltip texts for several cases:
-      // if (selection.selected.includes('html') || selection.selected.includes('css')) {
-      //   msg = 'Alleen HTML en/of CSS';
-      // } else if (selection.selected.includes('js') && selection.selected.length < 3) {
-      //   msg = 'Slechts JavaScript';
-      // }
+      selection.selected.forEach(function (index, i, self) {
+        var reducer = self.reduce(function (acc, val) {
+          return acc + val;
+        });
 
+        switch (index) {
+          case 0:
+          case 1:
+            if (reducer < 2) {
+              msg = msgs[0];
+            } else if (perc >= 35) {
+              msg = msgs[4];
+            }
+            break;
+          case 2:
+            if (self.length == 1) {
+              msg = msgs[1];
+            } else if (perc >= 35) {
+              msg = msgs[4];
+            }
+            break;
+          case 0:
+          case 1:
+          case 2:
+          case 3:
+            if (reducer < 7 && self.length >= 3) {
+              msg = msgs[3];
+            } else if (reducer < 7 && self.length < 3) {
+              msg = msgs[2];
+            } else if (perc >= 35) {
+              msg = msgs[4];
+            }
+            break;
+          case 4:
+          case 5:
+            if (reducer >= 4 && reducer < 10 && self.length < 3) {
+              msg = msgs[2];
+            } else if (perc >= 35) {
+              msg = msgs[4];
+            }
+            break;
+          case 6:
+          case 7:
+          case 8:
+          case 9:
+            if (reducer >= 6 && reducer < 31 && self.length >= 3) {
+              msg = msgs[3];
+            } else if (reducer >= 6 && reducer < 31 && self.length < 3) {
+              msg = msgs[2];
+            } else if (perc >= 35) {
+              msg = msgs[4];
+            }
+            break;
+          case 10:
+          case 11:
+          case 12:
+          case 13:
+            if (reducer >= 10 && reducer < 47 && self.length < 3) {
+              msg = msgs[2];
+            } else if (perc >= 35) {
+              msg = msgs[4];
+            }
+            break;
+        }
+      });
 
       var progressbarLength = this.el.offsetWidth - 24;
       var tooltipLength = this.tooltip.offsetHeight;
@@ -129,7 +193,12 @@
         this.tooltip.style.left = 'calc(-5.625rem + ' + progressbarLength + 'px - (' + tooltipLength + 'px / 2))';
       }
 
-      // this.tooltip.textContent = msg;
+      if (msg != undefined) {
+        this.tooltip.textContent = msg;
+        this.tooltip.classList.add('show');
+      } else {
+        this.tooltip.classList.remove('show');
+      }
     }
   };
 
@@ -147,11 +216,11 @@
             document.querySelector('.qualification').classList.add('show');
             document.querySelector('.subjects .action-button').removeAttribute('disabled');
             self.checkSubjects(this.value);
-            self.selected.push(this.value);
+            self.selected.push(i);
             progress.calcPercentage(this.value, true);
           } else {
             self.uncheckSubjects(this.value);
-            self.selected.splice(self.selected.indexOf(this.value), 1);
+            self.selected.splice(self.selected.indexOf(i), 1);
             progress.calcPercentage(this.value, false);
           }
 

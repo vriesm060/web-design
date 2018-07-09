@@ -414,7 +414,12 @@ main {
 }
 
 .qualification .tooltip {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+.qualification .tooltip.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 .qualification .tooltip::after {
   position: absolute;
@@ -432,12 +437,13 @@ main {
 @media all and (min-width: 48em) {
   .qualification .tooltip {
     position: fixed;
-    left: -90px;
+    left: -5.625rem;
     bottom: calc(9.125rem - var(--spacing-unit));
     z-index: 3;
     display: block;
     opacity: 0;
-    width: 150px;
+    width: 9.375rem;
+    min-height: 5rem;
     padding: var(--spacing-unit);
     border-radius: .3125rem;
     background-color: var(--color-primary);
@@ -449,10 +455,6 @@ main {
   }
 }
 
-.qualification progress[value] + .tooltip {
-  opacity: 1;
-  pointer-events: auto;
-}
 .qualification progress[value="0"] + .tooltip {
   opacity: 0;
   pointer-events: none;
