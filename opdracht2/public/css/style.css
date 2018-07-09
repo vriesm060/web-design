@@ -619,20 +619,24 @@ main {
 .levels fieldset {
   display: block;
   border: 0;
-  /* background-color: yellow; */
+  margin: var(--spacing-unit) 0;
 }
 
 .levels legend {
-  position: relative;
-  top: 5rem;
-  float: left;
+  display: block;
   width: 7.5rem;
   height: 1.5rem;
   margin-right: var(--spacing-unit);
-  /* background-color: green; */
   font-size: var(--button-font-size);
   font-weight: var(--base-font-weight);
   line-height: 1;
+}
+@media all and (min-width: 48em) {
+  .levels legend {
+    position: relative;
+    top: 5rem;
+    float: left;
+  }
 }
 
 .levels input[type="radio"] {
@@ -645,7 +649,6 @@ main {
   float: left;
   margin: var(--spacing-unit) 0;
   margin-right: var(--spacing-unit);
-  /* background-color: red; */
   text-align: center;
   cursor: pointer;
 }
