@@ -246,7 +246,7 @@
 
       this.el[0].parentNode.addEventListener('submit', function (e) {
         e.preventDefault();
-        window.location.hash = '#level';
+        document.querySelector('#level').scrollIntoView();
       });
     },
     checkSubjects: function (val) {
@@ -281,5 +281,46 @@
   };
 
   level.init();
+
+  var sections = {
+    el: document.querySelectorAll('.page-section'),
+    init: function () {
+      var self = this;
+      var tops = [];
+      var pos = 0;
+      var ticking = false;
+
+      this.el.forEach(function (section) {
+        var top = section.offsetTop;
+        tops.push(top);
+      });
+
+      function moveToSection(pos) {
+        var closest = tops.reduce(function(prev, curr) {
+          return (Math.abs(curr - pos) < Math.abs(prev - pos) ? curr : prev);
+        });
+
+        var idx = tops.indexOf(closest);
+        var section = self.el[idx];
+
+
+      }
+
+      window.addEventListener('scroll', function (e) {
+        pos = window.scrollY;
+
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            moveToSection(pos);
+            ticking = false;
+          });
+
+          ticking = true;
+        }
+      });
+    }
+  };
+
+  sections.init();
 
 })();

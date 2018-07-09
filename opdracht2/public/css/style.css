@@ -321,7 +321,7 @@ main {
     width: 100vh;
     height: 9.125rem;
     padding: calc(2 * var(--spacing-unit));
-    transform: rotate(-90deg) translateY(-9.125rem);
+    transform: rotate(-90deg) translateY(0);
     transform-origin: 100% 0;
   }
   .qualification.show {
@@ -417,10 +417,6 @@ main {
   opacity: 0;
   pointer-events: none;
 }
-.qualification .tooltip.show {
-  opacity: 1;
-  pointer-events: auto;
-}
 .qualification .tooltip::after {
   position: absolute;
   right: -.75rem;
@@ -452,6 +448,10 @@ main {
     transform-origin: 100% 100%;
     transition: all .3s ease-in-out;
     pointer-events: none;
+  }
+  .qualification .tooltip.show {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 
@@ -500,10 +500,28 @@ main {
   }
 }
 
+.page-section.special h2 {
+  width: 100%;
+  max-width: 48rem;
+  padding: 0 var(--spacing-unit);
+  margin: 0 auto;
+  margin-bottom: calc(1.5 * var(--spacing-unit));
+}
+@media all and (min-width: 48em) {
+  .page-section.special h2 {
+    margin-bottom: calc(3 * var(--spacing-unit));
+  }
+}
+
 .page-section-wrapper {
   display: block;
   width: 100%;
+  padding: var(--spacing-unit);
   background-color: var(--color-grey);
+}
+
+.page-section-wrapper .page-section {
+  min-height: 0;
 }
 
 .page-section-wrapper .cmd-icon::before {
@@ -590,6 +608,68 @@ main {
 .subjects .action-button:disabled {
   opacity: .25;
   pointer-events: none;
+}
+
+/*
+====================
+  Level
+====================
+*/
+
+.levels fieldset {
+  display: block;
+  border: 0;
+  /* background-color: yellow; */
+}
+
+.levels legend {
+  position: relative;
+  top: 5rem;
+  float: left;
+  width: 7.5rem;
+  height: 1.5rem;
+  margin-right: var(--spacing-unit);
+  /* background-color: green; */
+  font-size: var(--button-font-size);
+  font-weight: var(--base-font-weight);
+  line-height: 1;
+}
+
+.levels input[type="radio"] {
+  position: absolute;
+  left: -9999rem;
+  opacity: 0;
+}
+
+.levels input[type="radio"] + label {
+  float: left;
+  margin: var(--spacing-unit) 0;
+  margin-right: var(--spacing-unit);
+  /* background-color: red; */
+  text-align: center;
+  cursor: pointer;
+}
+
+.levels input[type="radio"] + label > .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin: var(--spacing-unit);
+  border-radius: 50%;
+  background-color: var(--color-grey);
+  font-size: 1.25rem;
+  font-weight: var(--button-font-weight);
+  text-align: center;
+  transition: all .3s ease-in-out;
+}
+.levels input[type="radio"]:focus + label > .icon,
+.levels input[type="radio"] + label:hover > .icon {
+  transform: scale(.85,.85);
+}
+.levels input[type="radio"]:checked + label > .icon {
+  background-color: var(--color-primary);
 }
 
 /*
