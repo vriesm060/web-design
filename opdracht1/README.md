@@ -18,9 +18,9 @@ This portfolio page features projects I worked on.
 
 The following principles are included:
 
-* [x] **#06:** [One primary action per screen](#one-primary-action-per-screen)
-* [x] **#11:** [Strong visual hierarchies work best](#strong-visual-hierarchies-work-best)
-* [x] **#14:** [Progressive disclosure](#progressive-disclosure)
+* [x] **#06:** [One primary action per screen](#06-one-primary-action-per-screen)
+* [x] **#11:** [Strong visual hierarchies work best](#11-strong-visual-hierarchies-work-best)
+* [x] **#14:** [Progressive disclosure](#14-progressive-disclosure)
 
 ### #06: One primary action per screen
 ---
