@@ -2,6 +2,8 @@
 
 ![Preview](screenshots/preview.png)
 
+[Demo](https://vriesm060.github.io/web-design/opdracht1/)
+
 This is a first design of my portfolio website, meant as a use case to show design principles, as described by Joshua Porter in his article [Principles of User Interface Design](http://bokardo.com/principles-of-user-interface-design/).
 
 This portfolio page features projects I worked on.
