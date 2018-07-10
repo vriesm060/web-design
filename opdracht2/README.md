@@ -12,7 +12,6 @@ Voor het vak Web Design heb ik een herontwerp gemaakt voor de website van de Min
 * [User Scenario's](#user-scenarios)
 * [Werkwijze](#werkwijze)
 * [Eindoplevering](#eindoplevering)
-* [Features](#features)
 * [Accessibility](#accessibility)
 * [Feedback na testen](#feedback-na-testen)
 
@@ -75,34 +74,82 @@ Bij het tweede ontwerp lag de focus veel meer op de student die geïnteresseerd 
 
 ## Eindoplevering
 
-<!-- Beschrijf hoe de content en flow past bij mijn user scenario's -->
-
 Ik heb het onderwerp van de website gericht op de student die wilt weten of deze minor geschikt is voor hem/haar. Vandaar dat ik het woord 'mij' veel gebruik, om het zo persoonlijk mogelijk te houden.
 
 Als je binnenkomt op de website, krijg je de vraag: "Iets voor mij?" en de bijbehorende knop "Ontdek". Deze vraag is wat een student buiten CMD graag beantwoord wil hebben en waar de website vervolgens ook voor moet zorgen.
 
+### Kleine introductie
+---
 
+![De minor introductie sectie](screenshots/section-de-minor.png)
 
-![Testimonials](screenshots/testimonials.png)
+Wanneer je op de knop "Ontdek" klikt kom je bij een kleine introductie over de minor, waarbij je opnieuw iets specifiekere vraag krijgt: "Past de minor bij mijn interesses?". Het is hierna namelijk de bedoeling om je interesses met betrekking tot de minor aan te geven, om zo te kijken of jij bij de minor past en de minor bij jou.
 
-De meningen van oud studenten van de minor is een belangrijk onderdeel in mijn website.
+### Ik ben geïnteresseerd in...
 
-![Aanmelden](screenshots/aanmelden.png)
+![Ik ben geïnteresseerd in sectie](screenshots/section-selection.png)
+
+Wanneer je verder gaat begint het beantwoorden van de vraag: "Is deze minor iets voor mij?". Op deze sectie moet je namelijk jouw interesses aanvinken in een lijst met onderwerpen die binnen de minor behandeld worden.
+
+Wanneer je een onderwerp selecteert verschijnt er rechts in beeld een meter die aangeeft in hoeverre de minor voor jouw geschikt is wanneer je jouw interesses invult. Deze meter geeft ook feedback aan de student over de geselecteerde interesses en hoe deze zich weerhoudt tot de inhoud van de minor.
+
+Er zijn verschillende combinaties van onderwerpen mogelijk die aangeven dat je geschikt bent voor de minor. Je hoeft bijvoorbeeld echt niet alleen maar technische interesses te hebben. Een paar zijn al voldoende.
+
+De onderwerpen en de weging van een onderwerp ten opzichte van de meter zijn bepaald aan de hand van welke onderwerpen aan bod komen tijdens de vakken. Dit geeft een eerlijke afweging over de geschiktheid van de minor. Zo weegt HTML zwaarder mee dan Real-Time Web, omdat dit bij elk vak voorkomt Real-Time Web maar bij één vak.
+
+### Mijn niveau
+---
+
+![Mijn niveau sectie](screenshots/section-level.png)
+
+Na het invullen van jouw interesses is de volgende stap het invullen van jouw niveau met betrekking tot HTML, CSS en JavaScript. Dit is een belangrijk onderdeel voor de docenten van de minor, omdat er een gedegen kennis van HTML, CSS en JavaScript wordt verwacht van de studenten, maar ook voor de student zelf is het belangrijk om te weten wat voor niveau geschikt is voor de minor.
+
+Het invullen van het niveau heeft nog een klein effect op de meter. Bij een slecht niveau zal de meter iets dalen, bij een uitstekend niveau iets stijgen. Dit is ook zinvol wanneer je bij interesses bijvoorbeeld geen HTML of CSS hebt ingevuld, maar meer specifieke interesses, zoals Real-Time Web, en de meter nog niet zo vol is. Dan zie je dat bij het invullen van het niveau de meter alsnog zal stijgen wanneer je al een uitstekende basiskennis hebt.
+
+### Vakken en meningen studenten
+---
+
+![Vakken](screenshots/section-courses.png)
+
+Nadat je alles hebt ingevuld kan je nog een beeld krijgen van de verschillende vakken die gegeven worden tijdens de minor. Bij elk vak kan je zien welke van de door jou ingevulde interesses worden behandeld.
+
+![Testimonials](screenshots/section-testimonials.png)
+
+Ook kan je meningen van oud studenten van de minor lezen om een nog betere indruk te krijgen.
+
+![Aanmelden](screenshots/section-signup.png)
 
 Wanneer je langs alle informatie gekomen bent en je het een leuke en interessante minor vindt, kan je gaan aanmelden via SIS.
 
 ### Principles of User Interface Design
 ---
 
+Deze Principles of User Interface Design komen voor in de website:
 
-
-## Features
-
-<!-- What makes your project stand out? -->
+* **02:** Interfaces exist to enable interaction
+* **04:** Keep users in control
+* **06:** One primary action per screen
+* **08:** Provide a natural next step
+* **10:** Consistency matters
+* **11:** Strong visual hierarchies work best
+* **14:** Progressive disclosure
 
 ## Accessibility
 
-Larissa gaf aan dat het voor haar belangrijk is dat knoppen en links los van de context nog steeds goed te begrijpen zijn, aangezien zij op deze manier een website navigeert. Knoppen als 'lees meer' zijn voor haar zeer onduidelijk. Vandaar dat ik bij mijn knoppen 'Ontdek!' en 'Aanmelden via SIS' een visueel verborgen `<span>` heb ingebouwd die context geeft aan de knoppen.
+Larissa gaf aan dat het voor haar belangrijk is dat knoppen en links los van de context nog steeds goed te begrijpen zijn, aangezien zij op deze manier een website navigeert. Knoppen als 'lees meer' zijn voor haar zeer onduidelijk. Vandaar dat ik bij mijn knoppen 'Ontdek' en 'Aanmelden via SIS' een visueel verborgen `<span>` heb ingebouwd die context geeft aan de knoppen.
+
+```
+<a class="action-button" href="#de-minor" role="button">Ontdek<span class="screenreader">deze minor</span></a>
+```
+
+Een uitdaging voor deze website was om niet visueel aan te kunnen geven of jij geschikt bent voor deze minor. Ik heb besloten om de feedback berichten die getoont worden wanneer je een interesse of niveau aangeeft voor te laten lezen door de screenreader. Dit heb ik voor elkaar gekregen door via JavaScript deze feedback teksten als visueel verborgen `<span>` in de `<label>` van de geselecteerde checkbox of radiobutton te stoppen. Hierdoor noemt de screenreader dit op na het aanvinken en krijg je dus elke keer je feedback te horen.
+
+```
+<label for="html">
+  HTML
+  <span class="screenreader">Geschikt voor mij? Alleen HTML en/of CSS</span>
+</label>
+```
 
 ## Feedback na testen
 
