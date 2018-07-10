@@ -1,35 +1,70 @@
 # Minor Web Development Website
 
-## User scenario:
+<!-- Brief description of the project. What is it about? -->
 
-#### Larissa
+[Demo](https://vriesm060.github.io/web-design/opdracht2/)
+
+## Inhoud
+
+* [Feedback](#feedback)
+* [User Scenario's](#user-scenarios)
+* [Werkwijze](#werkwijze)
+* [Eindoplevering](#eindoplevering)
+* [Features](#features)
+* [Accessibility](#accessibility)
+* [Feedback na testen](#feedback-na-testen)
+
+## Feedback
+
+| Feedback | Verbetering |
+| -------- | ----------- |
+| Beantwoord geen vraag. Maakt de flow voor een gebruiker niet af. | [Gedaan](#) |
+| Geen UI Principles besproken | [Gedaan](#) |
+| README onvolledig | Gedaan |
+
+## User Scenario's
+
+### Larissa
 ---
 
 Larissa is blind en vindt het daarom belangrijk dat de website een goede structuur kent. Het is voor haar belangrijk dat de informatie en interactie goed gelabeld is zodat zij begrijpt waar ze is, wat ze kan doen en tot welke informatie ze toegang kan krijgen.
 
-#### Student van buiten CMD, geïnteresseerd in de minor
+### Student van buiten CMD, geïnteresseerd in de minor
 ---
 
 Een student die geïnteresseerd is in de minor Web Development komt naar de website om informatie te vinden over de minor. Deze student wil graag weten van studenten die deze minor hebben gevolgd wat zij er van vonden en of deze minor geschikt is voor hem/haar.
 Wanneer deze student het gevoel heeft dat deze minor perfect is om te volgen, moet hij/zij zich kunnen aanmelden en weten hoe dit proces gaat.
 
-## Card sorting
+## Werkwijze
+
+### Card Sorting
+---
+
+<!-- Uitleggen ontwerpkeuzes -->
 
 ![Card Sorting](screenshots/card-sorting.jpg)
 
-## Eerste designs
+<!-- Info over card sorting -->
 
-#### Mobiel
+### Eerste Ontwerpen
 ---
 
+<!-- Info over eerste ontwerpen -->
+
+**Mobiel:**
 <img src="screenshots/preview-mobile.png" width="50%">
 
-#### Desktop
----
-
+**Desktop:**
 ![Preview Desktop](screenshots/preview-desktop.png)
 
+### Redesign
+---
+
+<!-- Info over redesign -->
+
 ## Eindoplevering
+
+<!-- Beschrijf hoe de content en flow past bij mijn user scenario's -->
 
 ![Preview](screenshots/preview.png)
 
@@ -42,6 +77,15 @@ De meningen van oud studenten van de minor is een belangrijk onderdeel in mijn w
 ![Aanmelden](screenshots/aanmelden.png)
 
 Wanneer je langs alle informatie gekomen bent en je het een leuke en interessante minor vindt, kan je gaan aanmelden via SIS.
+
+### Principles of User Interface Design
+---
+
+
+
+## Features
+
+<!-- What makes your project stand out? -->
 
 ## Accessibility
 
