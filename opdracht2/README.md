@@ -19,8 +19,8 @@ Voor het vak Web Design heb ik een herontwerp gemaakt voor de website van de Min
 
 | Feedback | Verbetering |
 | -------- | ----------- |
-| Beantwoord geen vraag. Maakt de flow voor een gebruiker niet af. | [Gedaan](#) |
-| Geen UI Principles besproken | [Gedaan](#) |
+| Beantwoord geen vraag. Maakt de flow voor een gebruiker niet af. | [Gedaan](#eindoplevering) |
+| Geen UI Principles besproken | [Gedaan](#principles-of-user-interface-design) |
 | README onvolledig | Gedaan |
 
 ## User Scenario's
@@ -33,7 +33,7 @@ Larissa is blind en vindt het daarom belangrijk dat de website een goede structu
 ### Student van buiten CMD, geïnteresseerd in de minor
 ---
 
-Een student buiten de opleiding CMD heeft interesse in User Interface Design en Interaction Design, maar wilt graag leren hoe hij/zij dit technisch kan toepassen. Hij/zij heeft al enige ervaring met HTML en CSS, maar verder nog niet veel technische kennis. Hij/zij wilt graag weten of deze minor geschikt is om dit te leren.
+Een student buiten de opleiding CMD heeft interesse in User Interface Design en Interaction Design, maar wilt graag leren hoe dit technisch toe te passen. Hij/zij heeft al enige ervaring met HTML en CSS, maar verder nog niet veel technische kennis en wilt graag weten of deze minor geschikt is om dit te leren.
 
 ## Werkwijze
 
@@ -147,7 +147,9 @@ Een uitdaging voor deze website was om niet visueel aan te kunnen geven of jij g
 ```
 <label for="html">
   HTML
-  <span class="screenreader">Geschikt voor mij? Alleen HTML en/of CSS</span>
+  <span class="screenreader">
+    Geschikt voor mij? Dit is een goede basis, maar de minor is wel een stuk meer technisch geörienteerd.
+  </span>
 </label>
 ```
 
