@@ -295,28 +295,25 @@
 
   level.init();
 
-  var sections = {
-    el: document.querySelectorAll('.page-section'),
+  var qualification = {
+    el: document.querySelector('.qualification'),
     init: function () {
       var self = this;
-      var tops = [];
       var pos = 0;
       var ticking = false;
 
-      this.el.forEach(function (section) {
-        var top = section.offsetTop;
-        tops.push(top);
-      });
+      var intro = document.querySelector('#de-minor');
+      var courses = document.querySelector('#courses');
 
-      function moveToSection(pos) {
-        var closest = tops.reduce(function(prev, curr) {
-          return (Math.abs(curr - pos) < Math.abs(prev - pos) ? curr : prev);
-        });
+      var top = intro.offsetTop;
+      var bottom = courses.offsetTop + courses.offsetHeight;
 
-        var idx = tops.indexOf(closest);
-        var section = self.el[idx];
-
-
+      var inRange = function (pos) {
+        if (pos >= top && pos <= bottom) {
+          self.el.style.opacity = 1;
+        } else {
+          self.el.style.opacity = 0;
+        }
       }
 
       window.addEventListener('scroll', function (e) {
@@ -324,7 +321,7 @@
 
         if (!ticking) {
           window.requestAnimationFrame(function () {
-            moveToSection(pos);
+            inRange(pos);
             ticking = false;
           });
 
@@ -334,6 +331,6 @@
     }
   };
 
-  sections.init();
+  qualification.init();
 
 })();

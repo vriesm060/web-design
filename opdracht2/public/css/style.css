@@ -302,6 +302,7 @@ main {
   bottom: 0;
   z-index: 2;
   display: block;
+  opacity: 0;
   width: 100%;
   padding: var(--spacing-unit);
   background-color: var(--color-grey);
@@ -312,6 +313,7 @@ main {
 }
 .qualification.show {
   transform: translateY(0);
+  opacity: 1;
   pointer-events: auto;
 }
 @media all and (min-width: 48em) {
