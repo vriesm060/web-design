@@ -1,31 +1,42 @@
 # Portfolio
 
+![Preview](screenshots/preview.png)
+
 This is a first design of my portfolio website, meant as a use case to show design principles, as described by Joshua Porter in his article [Principles of User Interface Design](http://bokardo.com/principles-of-user-interface-design/).
 
 This portfolio page features projects I worked on.
 
-<!-- Brief description of the project. What is it about? -->
-
-## Table of Contents
-
 ## Features
 
-#### General
+* [x] Filter option
+* [x] Sorting option
+* [x] Detail view of portfolio item
+
+## Principles of User Interface Design
+
+The following principles are included:
+
+* [x] **#06:** [One primary action per screen](#one-primary-action-per-screen)
+* [x] **#11:** [Strong visual hierarchies work best](#strong-visual-hierarchies-work-best)
+* [x] **#14:** [Progressive disclosure](#progressive-disclosure)
+
+### #06: One primary action per screen
 ---
 
-* [ ] Filter option
-* [ ] Sorting option
-* [ ] Detail view of portfolio item
+![Preview](screenshots/preview.png)
 
-#### Design principles included
+The one primary action on the homepage is clicking one of the portfolio items to view in the detail page. This action is obvious as the portfolio items are the biggest thing on the screen.
+
+### #11: Strong visual hierarchies work best
 ---
 
-* [x] **#06:** One primary action per screen
-* [x] **#11:** Strong visual hierarchies work best
-* [x] **#14:** Progressive disclosure
+![Preview](screenshots/detail.png)
 
-<!-- What makes your project stand out? -->
+Although the homepage also features strong visual hierarchy, the detail page is the best example of this principle. The portfolio item preview covers the entire width of the screen, which results in a strong visual hierarchy.
 
-## Usage
+### #14: Progressive disclosure
+---
 
-<!-- Instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action. -->
+![Preview](screenshots/filter.png)
+
+The principle of progressive disclosure can be found in the filter and sorting options at the top of the homepage. When you click on one of them, the options open up and push the portfolio items down. It does this with a nice transition so it catches your eye.
