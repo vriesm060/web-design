@@ -439,7 +439,6 @@ main {
     display: block;
     opacity: 0;
     width: 9.375rem;
-    min-height: 5rem;
     padding: var(--spacing-unit);
     border-radius: .3125rem;
     background-color: var(--color-primary);

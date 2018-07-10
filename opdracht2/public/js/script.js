@@ -85,7 +85,7 @@
 
       this.percentage += reducer(this.points);
       this.renderPercentage(this.percentage);
-      this.renderTooltip(this.percentage, true);
+      this.renderTooltip(this.percentage, true, value);
     },
     renderPercentage: function (perc) {
       this.el.value = perc;
@@ -107,11 +107,11 @@
     renderTooltip: function (perc, fieldset = false, val = null) {
       var msg;
       var msgs = [
-        'Alleen HTML en/of CSS',
-        'Alleen JavaScript',
-        'Weinig technische interesses',
-        'Veel technische interesses',
-        'Gezonde mix'
+        'Dit is een goede basis, maar de minor is wel een stuk meer technisch geörienteerd.',
+        'Met alleen JavaScript wordt deze minor wel lastig.',
+        'Zonder veel technische interesses is deze minor niet zo geschikt.',
+        'Technische interesses passen goed bij deze minor, maar basiskennis is ook belangrijk.',
+        'Deze minor past helemaal bij jou interesses!'
       ];
 
       // Add tooltip texts for several cases:
@@ -170,8 +170,6 @@
             break;
           case 10:
           case 11:
-          case 12:
-          case 13:
             if (reducer >= 10 && reducer < 47 && self.length < 3) {
               msg = msgs[2];
             } else if (perc >= 35) {
@@ -187,23 +185,14 @@
         });
 
         if (points < -5) {
-          msg = 'Slecht niveau';
+          msg = 'Matig niveau.';
         } else if (points >= -5 && points < 10) {
-          msg = 'Oke niveau';
+          msg = 'Oke niveau.';
         } else if (points >= 10 && points < 20) {
-          msg = 'Goed niveau';
+          msg = 'Goed niveau.';
         } else {
-          msg = 'Uitstekend niveau';
+          msg = 'Uitstekend niveau!';
         }
-      }
-
-      var progressbarLength = this.el.offsetWidth - 24;
-      var tooltipLength = this.tooltip.offsetHeight;
-      var left = 'calc(-5.625rem + ' + Math.round((perc / 75) * progressbarLength) + 'px - (' + tooltipLength + 'px / 2))';
-      this.tooltip.style.left = left;
-
-      if (this.el.value >= 75) {
-        this.tooltip.style.left = 'calc(-5.625rem + ' + progressbarLength + 'px - (' + tooltipLength + 'px / 2))';
       }
 
       if (msg != undefined) {
@@ -214,9 +203,19 @@
         var screenreader = document.createElement('span');
         screenreader.classList.add('screenreader');
         screenreader.textContent = 'Geschikt voor mij? ' + msg;
-        document.querySelector('.subjects input[value="' + val + '"] + label').appendChild(screenreader);
+        console.log(val);
+        document.querySelector('input[value="' + val + '"] + label').appendChild(screenreader);
       } else {
         this.tooltip.classList.remove('show');
+      }
+
+      var progressbarLength = this.el.offsetWidth - 24;
+      var tooltipLength = this.tooltip.offsetHeight;
+      var left = 'calc(-5.625rem + ' + Math.round((perc / 75) * progressbarLength) + 'px - (' + tooltipLength + 'px / 2))';
+      this.tooltip.style.left = left;
+
+      if (this.el.value >= 75) {
+        this.tooltip.style.left = 'calc(-5.625rem + ' + progressbarLength + 'px - (' + tooltipLength + 'px / 2))';
       }
     }
   };
