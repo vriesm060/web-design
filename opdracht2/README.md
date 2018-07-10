@@ -48,7 +48,8 @@ Het eerste waar ik mee begon, was Card Sorting, waarbij ik alle onderwerpen die 
 Voor de redesign van de website heb ik een nieuwe Card Sorting sessie gehouden.
 
 **Tweede Card Sorting sessie:**
-![Card Sorting sessie 2](screenshots/card-sorting-002.jpg)
+<img src="screenshots/card-sorting-002.jpg" style="transform:rotate(90deg);width:50%">
+<!-- ![Card Sorting sessie 2](screenshots/card-sorting-002.jpg) -->
 
 ### Eerste Ontwerp
 ---
