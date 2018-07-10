@@ -1,3 +1,6 @@
-Web Design
+# Web Design
 
-[Demo Opdracht 1](https://vriesm060.github.io/web-design/opdracht1/)
+## Inhoud
+
+* **[Opdracht 1: Principles of User Interface Design](/opdracht1)**
+* **[Opdracht 2: Minor Web Development Website](/opdracht2)**
