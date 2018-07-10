@@ -1,6 +1,8 @@
 # Minor Web Development Website
 
-<!-- Brief description of the project. What is it about? -->
+![Voorbeeld](screenshots/preview.png)
+
+Voor het vak Web Design heb ik een herontwerp gemaakt voor de website van de Minor Web Development. Dit ontwerp is speciaal bedoelt voor studenten van buiten de opleiding Communication and Multimedia Design (CMD) waarbinnen de minor gegeven wordt en voor Larissa, die blind is en de website via toetsenbord moet besturen.
 
 [Demo](https://vriesm060.github.io/web-design/opdracht2/)
 
@@ -32,43 +34,54 @@ Larissa is blind en vindt het daarom belangrijk dat de website een goede structu
 ### Student van buiten CMD, geïnteresseerd in de minor
 ---
 
-Een student die geïnteresseerd is in de minor Web Development komt naar de website om informatie te vinden over de minor. Deze student wil graag weten van studenten die deze minor hebben gevolgd wat zij er van vonden en of deze minor geschikt is voor hem/haar.
-Wanneer deze student het gevoel heeft dat deze minor perfect is om te volgen, moet hij/zij zich kunnen aanmelden en weten hoe dit proces gaat.
+Een student buiten de opleiding CMD heeft interesse in User Interface Design en Interaction Design, maar wilt graag leren hoe hij/zij dit technisch kan toepassen. Hij/zij heeft al enige ervaring met HTML en CSS, maar verder nog niet veel technische kennis. Hij/zij wilt graag weten of deze minor geschikt is om dit te leren.
 
 ## Werkwijze
 
 ### Card Sorting
 ---
 
-<!-- Uitleggen ontwerpkeuzes -->
+Het eerste waar ik mee begon, was Card Sorting, waarbij ik alle onderwerpen die ik aan bod wilde laten komen in de website opschreef op een sticky note, om vervolgens te gaan kijken hoe ik deze onderwerpen kon sorteren. Hiermee kreeg ik een goed overzicht van de inhoud van de website.
 
-![Card Sorting](screenshots/card-sorting.jpg)
+**Eerste Card Sorting sessie:**
+![Card Sorting sessie 1](screenshots/card-sorting-001.jpg)
 
-<!-- Info over card sorting -->
+Voor de redesign van de website heb ik een nieuwe Card Sorting sessie gehouden.
 
-### Eerste Ontwerpen
+**Tweede Card Sorting sessie:**
+![Card Sorting sessie 2](screenshots/card-sorting-002.jpg)
+
+### Eerste Ontwerp
 ---
 
-<!-- Info over eerste ontwerpen -->
+De eerste ontwerpen gaven een basis voor de stijl van de website. Dit ontwerp gaf alle huidige informatie weer in een nieuwe stijl, waarbij de focus lag op het aanmelden voor de minor. Vandaar dat de aanmeldknop veel aandacht krijgt.
 
 **Mobiel:**
-<img src="screenshots/preview-mobile.png" width="50%">
+<img src="screenshots/design-001-mobile.png" width="50%">
 
 **Desktop:**
-![Preview Desktop](screenshots/preview-desktop.png)
+![Design 001 Desktop](screenshots/design-001-desktop.png)
 
 ### Redesign
 ---
 
-<!-- Info over redesign -->
+Bij het tweede ontwerp lag de focus veel meer op de student die geïnteresseerd is in de minor. Bij dit ontwerp is het belangrijk dat de website persoonlijk is. Vandaar de vraag: "Iets voor mij?". Zo spreekt het meer aan en geeft het meer het gevoel dat je kan ontdekken of deze minor wel iets voor je is.
+
+**Mobiel:**
+<img src="screenshots/design-002-mobile.png" width="50%">
+
+**Desktop:**
+![Design 002 Desktop](screenshots/design-002-desktop.png)
 
 ## Eindoplevering
 
 <!-- Beschrijf hoe de content en flow past bij mijn user scenario's -->
 
-![Preview](screenshots/preview.png)
-
 Ik heb het onderwerp van de website gericht op de student die wilt weten of deze minor geschikt is voor hem/haar. Vandaar dat ik het woord 'mij' veel gebruik, om het zo persoonlijk mogelijk te houden.
+
+Als je binnenkomt op de website, krijg je de vraag: "Iets voor mij?" en de bijbehorende knop "Ontdek". Deze vraag is wat een student buiten CMD graag beantwoord wil hebben en waar de website vervolgens ook voor moet zorgen.
+
+
 
 ![Testimonials](screenshots/testimonials.png)
 
