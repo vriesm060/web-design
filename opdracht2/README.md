@@ -48,8 +48,8 @@ Het eerste waar ik mee begon, was Card Sorting, waarbij ik alle onderwerpen die 
 Voor de redesign van de website heb ik een nieuwe Card Sorting sessie gehouden.
 
 **Tweede Card Sorting sessie:**
+
 <img src="screenshots/card-sorting-002.jpg" width="50%">
-<!-- ![Card Sorting sessie 2](screenshots/card-sorting-002.jpg) -->
 
 ### Eerste Ontwerp
 ---
@@ -57,6 +57,7 @@ Voor de redesign van de website heb ik een nieuwe Card Sorting sessie gehouden.
 De eerste ontwerpen gaven een basis voor de stijl van de website. Dit ontwerp gaf alle huidige informatie weer in een nieuwe stijl, waarbij de focus lag op het aanmelden voor de minor. Vandaar dat de aanmeldknop veel aandacht krijgt.
 
 **Mobiel:**
+
 <img src="screenshots/design-001-mobile.png" width="50%">
 
 **Desktop:**
@@ -68,6 +69,7 @@ De eerste ontwerpen gaven een basis voor de stijl van de website. Dit ontwerp ga
 Bij het tweede ontwerp lag de focus veel meer op de student die geïnteresseerd is in de minor. Bij dit ontwerp is het belangrijk dat de website persoonlijk is. Vandaar de vraag: "Iets voor mij?". Zo spreekt het meer aan en geeft het meer het gevoel dat je kan ontdekken of deze minor wel iets voor je is.
 
 **Mobiel:**
+
 <img src="screenshots/design-002-mobile.png" width="50%">
 
 **Desktop:**
