@@ -60,7 +60,7 @@
       }
 
       this.renderPercentage(this.percentage);
-      this.renderTooltip(this.percentage);
+      this.renderTooltip(this.percentage, false, val);
     },
     addLevel: function (fieldset, value) {
       var reducer = function (arr) {
@@ -104,7 +104,7 @@
         this.el.classList.remove('full');
       }
     },
-    renderTooltip: function (perc, fieldset = false) {
+    renderTooltip: function (perc, fieldset = false, val = null) {
       var msg;
       var msgs = [
         'Alleen HTML en/of CSS',
@@ -209,6 +209,12 @@
       if (msg != undefined) {
         this.tooltip.textContent = msg;
         this.tooltip.classList.add('show');
+
+        // Add screenreader info:
+        var screenreader = document.createElement('span');
+        screenreader.classList.add('screenreader');
+        screenreader.textContent = 'Geschikt voor mij? ' + msg;
+        document.querySelector('.subjects input[value="' + val + '"] + label').appendChild(screenreader);
       } else {
         this.tooltip.classList.remove('show');
       }
@@ -235,6 +241,9 @@
             self.uncheckSubjects(this.value);
             self.selected.splice(self.selected.indexOf(i), 1);
             progress.calcPercentage(this.value, false);
+
+            // Remove screenreader info:
+            this.nextElementSibling.removeChild(this.nextElementSibling.children[0]);
           }
 
           if (progress.el.value == 0) {
@@ -276,6 +285,11 @@
             progress.addLevel(this.parentNode.name, this.value);
           }
         });
+      });
+
+      this.el[0].parentNode.parentNode.addEventListener('submit', function (e) {
+        e.preventDefault();
+        document.querySelector('#courses').scrollIntoView();
       });
     }
   };

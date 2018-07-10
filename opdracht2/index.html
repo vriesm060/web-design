@@ -8,17 +8,14 @@
     <link rel="stylesheet" href="public/css/style.css">
   </head>
   <body>
-
-    <a class="screenreader" href="#content">meteen naar de inhoud</a>
-
     <div class="site-header-wrapper">
       <header class="site-header" role="banner">
         <div class="cmd-icon">
           <img src="public/images/icons/h1.svg" alt="">
         </div>
-        <h1 id="content">Minor Web Development</h1>
+        <h1>Minor Web Development</h1>
         <h2><span class="screenreader">is deze minor</span>Iets voor mij?</h2>
-        <a class="action-button" href="#de-minor" role="button">Ontdek<span class="screenreader">deze minor</span>!</a>
+        <a class="action-button" href="#de-minor" role="button">Ontdek<span class="screenreader">deze minor</span></a>
       </header>
     </div>
 
@@ -41,7 +38,7 @@
 
           <section class="call-to-action">
             <h3>Past de minor bij mijn interesses?</h3>
-            <a class="action-button" href="#selection" role="button">Ontdek</a>
+            <a class="action-button" href="#selection" role="button">Ontdek<span class="screenreader">of de minor past bij mijn interesses</span></a>
           </section>
         </div>
       </section>
@@ -53,7 +50,7 @@
         <div class="content">
           <h2>Ik ben geïnteresseerd in&hellip;</h2>
 
-          <form class="subjects" action="index.html" method="post">
+          <form class="subjects" action="index.html" method="post" aria-label="Selecteer jouw interesses">
             <input id="html" type="checkbox" name="subject" value="html">
             <label for="html">HTML</label>
             <input id="css" type="checkbox" name="subject" value="css">
@@ -83,7 +80,7 @@
             <input id="user-interface-design" type="checkbox" name="subject" value="user-interface-design">
             <label for="user-interface-design">User Interface Design</label>
             <span></span>
-            <button class="action-button" type="submit">Mijn niveau</button>
+            <button class="action-button" type="submit"><span class="screenreader">Selecteer</span>Mijn niveau</button>
           </form>
         </div>
       </section>
@@ -95,75 +92,75 @@
         <div class="content">
           <h2>Dit is mijn niveau&hellip;</h2>
 
-          <form class="levels" action="index.html" method="post">
+          <form class="levels" action="index.html" method="post" aria-label="Selecteer jouw niveau">
             <fieldset name="html">
-              <legend>HTML</legend>
+              <legend aria-label="Selecteer jouw niveau van HTML">HTML</legend>
               <input id="html-bad" type="radio" name="level-html" value="-5">
               <label for="html-bad">
-                <span class="text">Beginner</span>
+                <span class="text"><span class="screenreader">HTML:</span>Beginner</span>
                 <span class="icon">1</span>
               </label>
               <input id="html-basic-knowledge" type="radio" name="level-html" value="0" checked>
               <label for="html-basic-knowledge">
-                <span class="text">Basisbegrip</span>
+                <span class="text"><span class="screenreader">HTML:</span>Basisbegrip</span>
                 <span class="icon">2</span>
               </label>
               <input id="html-advanced" type="radio" name="level-html" value="5">
               <label for="html-advanced">
-                <span class="text">Gevordend</span>
+                <span class="text"><span class="screenreader">HTML:</span>Gevordend</span>
                 <span class="icon">3</span>
               </label>
               <input id="html-very-good" type="radio" name="level-html" value="10">
               <label for="html-very-good">
-                <span class="text">Pro</span>
+                <span class="text"><span class="screenreader">HTML:</span>Pro</span>
                 <span class="icon">4</span>
               </label>
             </fieldset>
 
             <fieldset name="css">
-              <legend>CSS</legend>
+              <legend aria-label="Selecteer jouw niveau van CSS">CSS</legend>
               <input id="css-bad" type="radio" name="level-css" value="-5">
               <label for="css-bad">
-                <span class="text">Beginner</span>
+                <span class="text"><span class="screenreader">CSS:</span>Beginner</span>
                 <span class="icon">1</span>
               </label>
               <input id="css-basic-knowledge" type="radio" name="level-css" value="0" checked>
               <label for="css-basic-knowledge">
-                <span class="text">Basisbegrip</span>
+                <span class="text"><span class="screenreader">CSS:</span>Basisbegrip</span>
                 <span class="icon">2</span>
               </label>
               <input id="css-advanced" type="radio" name="level-css" value="5">
               <label for="css-advanced">
-                <span class="text">Gevordend</span>
+                <span class="text"><span class="screenreader">CSS:</span>Gevordend</span>
                 <span class="icon">3</span>
               </label>
               <input id="css-very-good" type="radio" name="level-css" value="10">
               <label for="css-very-good">
-                <span class="text">Pro</span>
+                <span class="text"><span class="screenreader">CSS:</span>Pro</span>
                 <span class="icon">4</span>
               </label>
             </fieldset>
 
             <fieldset name="js">
-              <legend>JavaScript</legend>
+              <legend aria-label="Selecteer jouw niveau van JavaScript">JavaScript</legend>
               <input id="js-bad" type="radio" name="level-js" value="-5">
               <label for="js-bad">
-                <span class="text">Beginner</span>
+                <span class="text"><span class="screenreader">JavaScript:</span>Beginner</span>
                 <span class="icon">1</span>
               </label>
               <input id="js-basic-knowledge" type="radio" name="level-js" value="0" checked>
               <label for="js-basic-knowledge">
-                <span class="text">Basisbegrip</span>
+                <span class="text"><span class="screenreader">JavaScript:</span>Basisbegrip</span>
                 <span class="icon">2</span>
               </label>
               <input id="js-advanced" type="radio" name="level-js" value="5">
               <label for="js-advanced">
-                <span class="text">Gevordend</span>
+                <span class="text"><span class="screenreader">JavaScript:</span>Gevordend</span>
                 <span class="icon">3</span>
               </label>
               <input id="js-very-good" type="radio" name="level-js" value="10">
               <label for="js-very-good">
-                <span class="text">Pro</span>
+                <span class="text"><span class="screenreader">JavaScript:</span>Pro</span>
                 <span class="icon">4</span>
               </label>
             </fieldset>
@@ -180,7 +177,7 @@
         <div class="content">
           <h2>Welke lessen krijg ik?</h2>
 
-          <details class="course" data-course="wafs">
+          <details class="course" data-course="wafs" open>
             <summary role="button">
               <h3>Web App from Scratch</h3>
             </summary>
